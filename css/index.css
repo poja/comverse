@@ -1,0 +1,61 @@
+/* Backgrounds */
+
+#section-main {
+	background: url('../img/slide-bg-complexity.jpg');
+	background-size: cover;
+}
+
+#section-we-do {
+	background: linear-gradient(90deg, rgb(49, 139, 173),  rgb(86, 183, 214), rgb(49, 139, 173));
+}
+
+#section-calendar {
+	background-image: url('../img/news-and-events-bg.jpg');
+	background-size: cover;
+}
+
+#section-success {
+	background-color: rgb(236, 236, 236);
+}
+
+/* Special */
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	background-color: gray;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	color: rgb(86, 86, 86); /* gray */
+}
+
+#section-success > h2 {
+	color: rgb(86, 86, 86);	/* gray */
+}
+
+.button-link {
+	background-color: rgb(49, 139, 173);	/* blue */
+	border-radius: 5px;
+	padding: 5px;
+}
+
+[id^="section"] h2, [id^="section"] h3, [id^="section"] a {
+	color: white;
+}
+
+[id^="section"], footer, header {
+	padding: 20px;
+	box-shadow: 5px 0px black;
+}
+
+#section-main > h2 {
+	/* margin: 0; */
+}
+
+header {
+	background-color: white;
+}
+
+header, section, footer {
+	margin: 0;
+}
