@@ -1,7 +1,8 @@
-/* Backgrounds */
+/* Backgrounds and Colors */
 
 #section-main {
-	background: url('../img/slide-bg-complexity.jpg');
+	background: url('../img/slide-bg-complexity.jpg') fixed;
+	background-size: 100% 100%;
 	background-size: cover;
 }
 
@@ -10,7 +11,7 @@
 }
 
 #section-calendar {
-	background-image: url('../img/news-and-events-bg.jpg');
+	background: url('../img/news-and-events-bg.jpg') fixed;
 	background-size: cover;
 }
 
@@ -18,14 +19,180 @@
 	background-color: rgb(236, 236, 236);
 }
 
-/* Special */
+nav a {
+	color: black;
+}
+
+
+.topic-rect {
+	opacity: 0.9;
+}
+.topic-rect:hover {
+	opacity: 1;
+}
+
+.topic-rect:nth-child(1) {
+	background-color: #FE3094; /* pink */
+}
+.topic-rect:nth-child(2) {
+	background-color: #58B627; /* green */
+}
+.topic-rect:nth-child(3) {
+	background-color: #FC6001; /* orange */
+}
+
+/* Layout */
+
+	/* General */
+
+.u-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.u-clearfix:after {
+   content: " "; 	/* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.section-content {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.button-link {
+	display: block;
+	max-width: 12em;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 7px;
+	position: relative;
+}
+.button-link:after {
+  content: "\25BA";
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+}
+
+body, header, section, footer {
+	margin: 0;
+}
+
+[id^="section"], footer {
+	padding: 20px;
+}
+
+.text-box {
+	overflow: scroll-y;
+	text-overflow: ellipsis;
+}
+
+	/* header */
+
+header .section-content > div, nav, img {
+	display: inline-block;
+}
+
+header > div > img {
+	width: 20%;
+}
+header > div > nav {
+	width: 60%;
+}
+header > div > #do-box {
+	width: 18%;
+}
+
+nav * {
+	box-sizing: border-box;
+}
+
+nav > ul {
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-left: 10px;
+}
+
+nav > ul > li {
+	float: left;
+	list-style: none;
+}
+nav > ul > li:after {
+	content: "|";
+	padding-left: 5px;
+	padding-right: 5px;
+}
+nav > ul > li:last-child:after {
+	content: " ";
+	padding-left: 5px;
+}
+
+#do-box input {
+	width: 100%;
+}
+
+
+	/* section-main */
+
+.topic-rect {
+	box-sizing: border-box;
+	width: 30%;
+	height: 170px;
+	float: left;
+	padding-left: 2%;
+	padding-right: 2%;
+	border-radius: 5px;
+}
+
+.topic-rect:nth-child(2) {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+
+.topic-rect > .text-box {
+	height: 60%;
+}
+
+.topic-rect > a {
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+
+.carousel-nav {
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	border-radius: 25%;
+	border: none;
+}
+
+.carousel-nav-box {
+	margin-bottom: 30px;
+}
+
+.carousel-window-desc {
+	width: 50%;
+}
+
+.carousel-window-desc > h3 {
+	margin: 0;
+}
+
+
+/* Colors */
 
 body {
-	font-family: 'Open Sans', sans-serif;
 	background-color: gray;
-	padding: 0;
-	margin: 0;
-	text-align: center;
 	color: rgb(86, 86, 86); /* gray */
 }
 
@@ -33,29 +200,78 @@ body {
 	color: rgb(86, 86, 86);	/* gray */
 }
 
-.button-link {
-	background-color: rgb(49, 139, 173);	/* blue */
-	border-radius: 5px;
-	padding: 5px;
-}
 
 [id^="section"] h2, [id^="section"] h3, [id^="section"] a {
 	color: white;
-}
-
-[id^="section"], footer, header {
-	padding: 20px;
-	box-shadow: 5px 0px black;
-}
-
-#section-main > h2 {
-	/* margin: 0; */
 }
 
 header {
 	background-color: white;
 }
 
-header, section, footer {
-	margin: 0;
+.carousel-nav {
+	background-color: #E5E5E5;	/* almost white */
 }
+.carousel-nav.selected {
+	background-color: #2E95CA;
+}
+
+/* Fonts */
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2, h3 {
+	font-weight: normal;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+.u-bold {
+	font-weight: bold;
+}
+
+nav, #section-main .button-link {
+	text-transform: uppercase;
+}
+
+nav a, .topic-rect > a {
+	text-decoration: none;
+}
+
+nav li {
+	font-size: 0.6rem;
+}
+
+
+/* Special */
+
+body {
+	scroll-behavior: smooth;
+}
+
+
+
+.carousel-nav {
+	cursor: pointer;
+}
+
+.button-link {
+	text-decoration: none;
+}
+
+
+
+
+.button-link {
+	background: linear-gradient(to top, #1188C4, #1D8EC6, #2B94C9);	/* blue */
+	border-radius: 5px;
+}
+
+
+
+
