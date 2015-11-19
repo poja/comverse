@@ -1,9 +1,12 @@
+
+/**************************/
 /* Backgrounds and Colors */
+/**************************/
 
 #section-main {
-	background: url('../img/slide-bg-complexity.jpg') fixed;
+	background: url('../img/slide-bg-complexity.jpg');
 	background-size: 100% 100%;
-	background-size: cover;
+	/*background-size: cover;*/
 }
 
 #section-we-do {
@@ -11,8 +14,9 @@
 }
 
 #section-calendar {
-	background: url('../img/news-and-events-bg.jpg') fixed;
-	background-size: cover;
+	background: url('../img/news-and-events-bg.jpg');
+	background-size: 100% 100%;
+	/*background-size: cover;*/
 }
 
 #section-success {
@@ -41,7 +45,31 @@ nav a {
 	background-color: #FC6001; /* orange */
 }
 
-/* Layout */
+.button-link {
+	background: linear-gradient(to top, #1188C4, #1D8EC6, #2B94C9);	/* blue */
+}
+
+.calendar-content {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.success-box-content {
+	background-color: white;
+}
+
+.u-grayscale {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+/************************/
+/******** Layout ********/
+/************************/
 
 	/* General */
 
@@ -71,6 +99,7 @@ nav a {
 	margin-bottom: 15px;
 	padding: 7px;
 	position: relative;
+	border-radius: 5px;
 }
 .button-link:after {
   content: "\25BA";
@@ -189,12 +218,129 @@ nav > ul > li:last-child:after {
 }
 
 
-/* Colors */
+	/* section-we-do */
+
+
+#section-we-do .button-link {
+	margin: 30px auto 20px auto;
+}
+
+.icon-holder {
+	float: left;
+	width: 16%;
+}
+.icon-holder > img {
+	width: 100%;
+}
+
+.icon-holder > .image-label {
+	color: white;
+	text-align: center;
+}
+
+
+	/* section-calendar */
+
+#section-calendar {
+	padding-bottom: 5rem;
+}
+
+.calendar-column {
+	float: left;
+	width: 33%;
+	box-sizing: border-box;
+	padding: 0 1rem;
+}
+
+.calendar-content {
+	padding: .5rem;
+}
+
+#section-calendar h2 {
+	margin-bottom: 0;
+}
+
+#section-calendar h3 {
+	margin-top: 3rem;
+	margin-bottom: .5rem;
+}
+
+#section-calendar .calendar-content > img {
+	width: 25%;
+	float: left;
+}
+
+#section-calendar .calendar-content > p {
+	width: 75%;
+	box-sizing: border-box;
+	padding: 0 .5rem;
+	margin: 0;
+	float: left;
+}
+
+.calendar-column:last-child h3 {
+	color: transparent;
+}
+
+
+	/* section-success */
+
+#section-success .button-link {
+	margin: 0 auto;
+}
+
+.success-column {
+	width: 37.5%;
+	float: left;
+}
+#success-column-3 {
+	width: 25%;
+}
+#success-column-3 .success-icon {
+	width: 50%;
+}
+
+.success-icon {
+	float: left;
+	width: 33.3%;
+	box-sizing: border-box;
+}
+
+.success-icon img {
+	width: 100%;
+}
+
+.success-box {
+	padding: 0.2rem;
+}
+
+.success-quote .success-box-content {
+	padding: .5rem;
+	height: 25rem;
+}
+
+#section-success .button-link {
+	margin-top: 1.5rem;
+}
+
+.success-bottom img {
+	width: 20%;
+}
+
+
+/******************/
+/***** Colors *****/
+/******************/
 
 body {
 	background-color: gray;
+}
+
+body,
+#section-success > .section-content > h2 {
 	color: rgb(86, 86, 86); /* gray */
 }
+
 
 #section-success > h2 {
 	color: rgb(86, 86, 86);	/* gray */
@@ -216,7 +362,17 @@ header {
 	background-color: #2E95CA;
 }
 
-/* Fonts */
+.calendar-column > h3 {
+	color: white;
+}
+
+/*******************/
+/****** Fonts ******/
+/*******************/
+
+html {
+	font-size: 100%;
+}
 
 
 body {
@@ -235,9 +391,32 @@ h2 {
 	font-weight: bold;
 }
 
-nav, #section-main .button-link {
+nav, 
+#section-main .button-link,
+#section-we-do > .section-content > h2,
+#section-calendar > .section-content > h2,
+#section-success > .section-content > h2,
+#section-calendar h3 {
 	text-transform: uppercase;
 }
+
+
+#section-we-do > .section-content > h2,
+#section-calendar > .section-content > h2,
+#section-success > .section-content > h2 {
+	text-align: center;
+}
+
+#section-calendar h3 {
+	font-size: 2rem;
+}
+
+#section-calendar .calendar-content > p {
+	font-size: 0.7rem;
+	text-shadow: 0 0 0px black;
+	color: black;
+}
+
 
 nav a, .topic-rect > a {
 	text-decoration: none;
@@ -247,13 +426,14 @@ nav li {
 	font-size: 0.6rem;
 }
 
+/*******************/
+/***** Special *****/
+/*******************/
 
-/* Special */
 
 body {
 	scroll-behavior: smooth;
 }
-
 
 
 .carousel-nav {
@@ -262,14 +442,6 @@ body {
 
 .button-link {
 	text-decoration: none;
-}
-
-
-
-
-.button-link {
-	background: linear-gradient(to top, #1188C4, #1D8EC6, #2B94C9);	/* blue */
-	border-radius: 5px;
 }
 
 
