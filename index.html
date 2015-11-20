@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Comverse</title>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
 	<link href="css/index.css" rel='stylesheet' type='text/css' />
 </head>
 <body>
@@ -20,7 +20,15 @@
 			</nav>
 			<div id="do-box"> 
 				<!-- Language choice + search + customer login link --> 
+				<select name="language">
+					<optgroup>
+						<option value="English">EN</option>
+						<option value="Hebrew">HE</option>	
+					</optgroup>
+				</select>
+				<a href="#" id="login-link">Customer Login</a>
 				<input></input>
+				<a href="#" id="search-link"><img src="./img/searchBtn.png" alt="Search Button"></a>
 			</div>
 		</div>
 	</header>
@@ -42,17 +50,17 @@
 				<div class="topic-rect">
 					<h3 class="text-box">Converse Is Value-Added Service Global Market Leader.</h3>
 					<img src="" alt="">
-					<a href="#">Read More</a>
+					<a href="#" class="read-more-link">Read More</a>
 				</div>
 				<div class="topic-rect">
 					<h3 class="text-box">Managed Services World Congress September 18-19 Berlin, Germany</h3>
 					<img src="" alt="">
-					<a href="#">Read More</a>
+					<a href="#" class="read-more-link">Read More</a>
 				</div>
 				<div class="topic-rect">
 					<h3 class="text-box">Comverse: Enabling a world of Connected Possibilities</h3>
 					<img src="" alt="">
-					<a href="#">Watch Now</a>
+					<a href="#" class="watch-now-link">Watch Now</a>
 				</div>
 			</div>
 		</div>
@@ -97,9 +105,13 @@
 					<h3>News</h3>
 					<div class="calendar-content u-clearfix">
 						<img src="./img/date.png" alt="Date">
+						<!-- <div class="date">
+							<span>04</span>
+							<span>SEP</span>
+						</div> -->
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="news-link" href="">All News</a>
+					<a class="news-link" href="">News</a>
 				</div>
 				<div class="calendar-column">
 					<h3>Events</h3>
@@ -130,31 +142,33 @@
 					<div class="success-box success-quote">
 						<div class="success-box-content">
 							<div class="success-top">
-								<img class="u-grayscale u-flip-x" src="./img/CB-JP-face.png" alt="Jonathan Pierce">
+								<img class="u-flip-x" src="./img/CB-JP-face-blue.jpg" alt="Jonathan Pierce">
 								<q>We have very good and very warm relations with Comverse. We always achievetzzzzzzzzzzz</q>
 							</div>
 							<hr />
-							<div class="success-bottom">
-								<p>Sergey Korotych</p>
-								<p>Deputy CTO, 3 Mob Ukraine</p>
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="3 Mob Icon">
+							<div class="success-bottom u-clearfix">
+								<div class="quote-source">
+									<p>Sergey Korotych</p>
+									<p>Deputy CTO, 3 Mob Ukraine</p>	
+								</div>
+								<img class="u-grayscale" src="./img/3mob_w108px_X_h95px.jpg" alt="3 Mob Icon">
 							</div>
 						</div>
 					</div>
 					<div class="success-row u-clearfix">
 						<div class="success-icon success-box">
 							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								<img class="u-grayscale" src="./img/cable_wireless_w100px_X_h42px2.jpg" alt="HP Inc icon" />
 							</div>
 						</div>
 						<div class="success-icon success-box">
 							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								<img class="u-grayscale" src="./img/Jersey_Telecom_w100px_X_h42px.jpg" alt="HP Inc icon" />
 							</div>
 						</div>
 						<div class="success-icon success-box">
 							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="HP Inc icon" />
 							</div>
 						</div>
 					</div>
@@ -163,31 +177,33 @@
 					<div class="success-row u-clearfix">
 						<div class="success-icon success-box">
 							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								<img class="u-grayscale" src="./img/MAX_telecom_w108px_X_h95.jpg" alt="HP Inc icon" />
 							</div>
 						</div>
 						<div class="success-icon success-box">
 							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								<img class="u-grayscale" src="./img/mts_w108px_X_h95px.jpg" alt="HP Inc icon" />
 							</div>
 						</div>
 						<div class="success-icon success-box">
 							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								<img class="u-grayscale" src="./img/play_w108px_X_h95px.jpg" alt="HP Inc icon" />
 							</div>
 						</div>
 					</div>
 					<div class="success-box success-quote">
 						<div class="success-box-content">
 							<div class="success-top">
-								<img class="u-grayscale u-flip-x" src="./img/JT-GM-face.png" alt="Adale Kehassan">
+								<img class="u-flip-x" src="./img/JT-GM-face-blue.jpg" alt="Adale Kehassan">
 								<q>Comverse has demonstrated that they are partners, not just suppliers, because they understand our needs, out situations; together we are love love love love</q>
 							</div>
 							<hr />
-							<div class="success-bottom">
-								<p>Adalle Kehassan</p>
-								<p>CIO of Multi-links</p>
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="3 Mob Icon">
+							<div class="success-bottom u-clearfix">
+								<div class="quote-source">
+									<p>Adalle Kehassan</p>
+									<p>CIO of Multi-links</p>	
+								</div>
+								<img class="u-grayscale" src="./img/multilinks.jpg" alt="3 Mob Icon">
 							</div>
 						</div>
 					</div>
@@ -199,10 +215,12 @@
 								<q>Comverse has been able to fully devliver what we want and we have peers that also say that they have peers that </q>
 							</div>
 							<hr />
-							<div class="success-bottom">
-								<p>Ravisahnker</p>
-								<p>Tata Sky CIO N.</p>
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="3 Mob Icon">
+							<div class="success-bottom u-clearfix">
+								<div class="quote-source">
+									<p>Ravisahnker</p>
+									<p>Tata Sky CIO N.</p>	
+								</div>
+								<img class="u-grayscale" src="./img/Tata_Sky_w108px_X_h95px.jpg" alt="3 Mob Icon">
 							</div>
 						</div>
 					</div>
@@ -214,7 +232,7 @@
 						</div>
 						<div class="success-icon success-box">
 							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								<img class="u-grayscale" src="./img/VIDEOCON_w108px_X_h95px.jpg" alt="HP Inc icon" />
 							</div>
 						</div>
 					</div>
