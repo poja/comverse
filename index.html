@@ -6,62 +6,80 @@
 	<title>Comverse</title>
 	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
 	<link href="css/index.css" rel='stylesheet' type='text/css' />
-</head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head> 
 <body>
 	<header>
 		<div class="section-content">
-			<button class="screen-small sandwich"></button>
+			<a href="#nav-main"><button class="screen-small sandwich"></button></a>
 			<img src="img/comverse-logo.png" alt="Comverse Logo" />
-			<nav class="screen-large">
-				<ul class="u-clearfix">
-					<li><a href="">Your Needs</a></li>
-					<li><a href="">Our Portfolio</a></li>
-					<li><a href="">News &amp; Media</a></li>
-					<li><a href="">About Comverse</a></li>
-				</ul>
+			<nav id="nav-main">
+				<div class="float-under-header">
+					<ul class="u-clearfix">
+						<a href="#"><li>Your Needs</li></a>
+						<a href="#"><li>Our Portfolio</li></a>
+						<a href="#"><li>News &amp; Media</li></a>
+						<a href="#"><li>About Comverse</li></a>
+						<a href="#collapse-nav"><li class="screen-small">CLOSE</li></a>
+					</ul>
+				</div>
 			</nav>
 			<div id="do-box" class="screen-large"> 
 				<!-- Language choice + search + customer login link --> 
-				<select name="language">
-					<optgroup>
-						<option value="English">EN</option>
-						<option value="Hebrew">HE</option>	
-					</optgroup>
-				</select>
+				
+				<div class="wrapper-select">
+					<select name="language">
+						<optgroup>
+							<option value="English">EN</option>
+							<option value="Hebrew">HE</option>	
+						</optgroup>
+					</select>
+				</div>
 				<a href="#" id="login-link">Customer Login</a>
 				<input></input>
 				<a href="#" id="search-link"><img src="./img/searchBtn.png" alt="Search Button"></a>
 			</div>
-			<button class="screen-small search"></button>
+			<div class="float-under-header screen-small" id="search-mobile">
+				<div>
+					<input type="text"></input>
+					<a href="#"><i class="fa fa-times"></i></a> <!-- x button to close search -->
+				</div>
+			</div>
+			<a href="#search-mobile"><button class="screen-small search"></button></a>
 		</div>
 	</header>
 	<main id="section-main">
 		<div class="section-content">
-			<div class="carousel-window-desc">
-				<h2><span class="u-bold">Free</span> Your Marketplace From IT <span class="u-bold">Complexity</span></h2>
-				<h3>Comverse Policy Studio</h3>
-				<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
-			</div>
-			<a href="" class="button-link">Learn More</a>
-			<div class="carousel-nav-box">
-				<button class="carousel-nav selected"></button>
-				<button class="carousel-nav"></button>
-				<button class="carousel-nav"></button>
-				<button class="carousel-nav"></button>
+			<div id="main-top">
+				<div class="carousel-window-desc">
+					<h2><span class="u-bold">Free</span> Your Marketplace From IT <span class="u-bold">Complexity</span></h2>
+					<h3>Comverse Policy Studio</h3>
+					<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
+				</div>
+				<a href="" class="button-link">Learn More</a>
+				<div class="carousel-nav-box">
+					<button class="carousel-nav selected">1</button>
+					<button class="carousel-nav">2</button>
+					<button class="carousel-nav">3</button>
+					<button class="carousel-nav">4</button>
+				</div>
 			</div>
 			<div id="topics-holder" class="u-clearfix u-center">
 				<div class="topic-rect">
 					<h3 class="text-box">Comverse Is Value-Added Service Global Market Leader.</h3>
+					<i class="screen-small promotion-arrow"></i>
 					<img src="./img/link-icon-image.png" alt="Read more">
 					<a href="#">Read More</a>
 				</div>
 				<div class="topic-rect">
 					<h3 class="text-box">Managed Services World Congress September 18-19 Berlin, Germany</h3>
+					<i class="screen-small promotion-arrow"></i>
 					<img src="./img/read-icon-image.png" alt="Read more">
 					<a href="#">Read More</a>
 				</div>
 				<div class="topic-rect">
 					<h3 class="text-box">Comverse: Enabling a world of Connected Possibilities</h3>
+					<i class="screen-small promotion-arrow"></i>
 					<img src="./img/play-icon-image.png" alt="Watch now">
 					<a href="#">Watch Now</a>
 				</div>
@@ -103,7 +121,7 @@
 					<div class="image-label">Social Media</div>
 				</div>
 			</div>
-			<a href="" class="button-link">See all of our solutions</a>
+			<a href="" class="button-link screen-large">See all of our solutions</a>
 		</div>
 	</section>
 	<section id="section-calendar">
@@ -128,10 +146,10 @@
 						<img src="./img/date.png" alt="Date">
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="events-link" href="">All Events</a>
+					<a class="events-link screen-large" href="">All Events</a>
 				</div>
 				<div class="calendar-column">
-					<h3>Events</h3>
+					<h3 class="screen-large">Events</h3>
 					<div class="calendar-content u-clearfix">
 						<img src="./img/date.png" alt="Date">
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
@@ -152,7 +170,7 @@
 						<div class="success-box-content">
 							<div class="success-top">
 								<img src="./img/CB-JP-face.png" alt="Jonathan Pierce">
-								<q>We have very good and very warm relations with Comverse. We always achievetzzzzzzzzzzz</q>
+								<q>We have very good and very warm relations with Comverse. We always achieve great work with them and like to work with them and other nice compliments that one can give a company like Comverse.</q>
 							</div>
 							<hr />
 							<div class="success-bottom u-clearfix">
@@ -182,7 +200,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="success-column">
+				<div class="success-column" id="success-column-2">
 					<div class="success-row u-clearfix">
 						<div class="success-icon success-box">
 							<div class="success-box-content">
@@ -318,7 +336,27 @@
 
 			</div>
 		</div>
+		<div class="section-content screen-small">
+			<a class="arrow-up-mobile" href="#"></a>
+			<div class="footer-row"><a>Contact Us</a></div>
+			<div class="footer-row"><a>Subscribe to Comverse News</a></div>
+			<div class="footer-row">Visit us on:
+				<div class="icon-group">
+					<a href="http://youtube.com" class="blog-icon"><img src="./img/socialMenuIcon-youtube.png" alt="Youtube Icon" class="u-grayscale"></a>
+					<a href="http://twitter.com" class="blog-icon"><img src="./img/socialMenuIcon-twitter.png" alt="Twitter Icon" class="u-grayscale"></a>
+					<a href="http://linkedin.com" class="blog-icon"><img src="./img/socialMenuIcon-linkdin.png" alt="LinkedIn Icon" class="u-grayscale"></a>	
+				</div>
+			</div>
+			<div class="footer-row">Change language:
+				<div class="wrapper-select">
+					<select name="language">
+						<option value="English">English</option>
+						<option value="Hebrew">Hebrew</option>
+					</select>
+				</div>
+			</div>
+			<small>Copyright &copy; 2012 Comverse, Inc <a href="">Privacy Policy</a> <a href="">Sitemap</a></small>
+		</div>
 	</footer>
-	
 </body>
 </html>
