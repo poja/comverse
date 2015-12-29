@@ -1,6 +1,5 @@
 /** 
 	NEEDS FIXING:
-		Font awesome
 		do-box
 		Rearrangement
 		Going over all requirements
@@ -77,12 +76,11 @@ footer .screen-small {
 #section-success .success-icon .layer-bottom div {
   background-image: url("../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg");
   background-position: center center;
-  background-size: 100px 100px;
   background-repeat: no-repeat;
-  background-color: #3AA6DB; }
+  background-color: #3399CC; }
 
 #section-success .success-quote .layer-bottom div {
-  background-color: #3AA6DB; }
+  background-color: #3399CC; }
 
 nav a {
   color: black; }
@@ -100,6 +98,9 @@ nav a {
 .carousel-nav > label {
   background-color: #E5E5E5;
   color: #565656; }
+  @media (min-width: 500px) {
+    .carousel-nav > label {
+      color: transparent; } }
 
 .carousel-nav > input[type="radio"]:checked + label,
 .carousel-nav > label:hover {
@@ -162,7 +163,9 @@ body,
 #section-success > h2 {
   color: #565656; }
 
-[id^="section"] h2, [id^="section"] h3, [id^="section"] a {
+[id^="section"] h2,
+[id^="section"] h3,
+[id^="section"] a {
   color: white; }
 
 header {
@@ -300,7 +303,7 @@ header {
   height: 4.5rem; }
   @media (min-width: 500px) {
     header {
-      padding-bottom: .5rem;
+      padding-bottom: .2rem;
       height: auto; } }
 
 header .section-content > div, nav {
@@ -529,15 +532,15 @@ nav {
   padding: .5rem 2%;
   margin-bottom: 10px;
   margin-top: 10px; }
+  @media (min-width: 500px) {
+    .topic-rect {
+      width: 30%;
+      float: left;
+      border-radius: 5px; }
+      .topic-rect:nth-child(2) {
+        margin-left: 5%;
+        margin-right: 5%; } }
 
-@media (min-width: 500px) {
-  .topic-rect {
-    width: 30%;
-    float: left;
-    border-radius: 5px; }
-    .topic-rect:nth-child(2) {
-      margin-left: 5%;
-      margin-right: 5%; } }
 .topic-rect > .text-box {
   text-overflow: none;
   width: 80%; }
@@ -550,7 +553,7 @@ nav {
       height: 7rem; } }
   @media (min-width: 650px) {
     .topic-rect > .text-box {
-      height: 5rem; } }
+      height: 5.5rem; } }
 
 i.promotion-arrow:after {
   content: url("../img/promotion-item-arrow.png");
@@ -563,14 +566,13 @@ i.promotion-arrow:after {
   font-weight: bold;
   margin-bottom: 10px; }
 
-.topic-rect img {
-  padding-right: .7rem;
-  height: 1.7rem;
-  background-repeat: no-repeat;
-  float: left; }
+.topic-rect i.fa {
+  font-size: 1.6rem;
+  vertical-align: middle;
+  margin-right: .5rem; }
 
 .carousel-nav {
-  margin-bottom: 30px; }
+  margin-bottom: 2rem; }
   .carousel-nav input[type="radio"] {
     visibility: hidden;
     width: 0;
@@ -653,36 +655,31 @@ i.promotion-arrow:after {
 
 .calendar-content {
   padding: .5rem;
-  margin-bottom: .5rem; }
+  margin-bottom: .5rem;
+  display: flex; }
+  .calendar-content .u-cleafix {
+    margin-top: .5rem; }
+  .calendar-content p {
+    padding: 0 .5rem;
+    margin: 0; }
 
 #section-calendar h2 {
   margin-bottom: 0; }
 
-#section-calendar > .section-content > .u-clearfix {
-  margin-top: .5	rem; }
-
 #section-calendar h3 {
   margin-bottom: .5rem; }
 
-#section-calendar .calendar-content > .date-1 {
-  width: 25%;
-  float: left; }
-
-#section-calendar .calendar-content > p {
-  width: 75%;
-  box-sizing: border-box;
-  padding: 0 .5rem;
-  margin: 0;
-  float: left; }
-
-.date-1 span {
-  display: block;
-  padding: .3rem; }
-  .date-1 span:first-child {
-    font-size: 2rem;
-    border-bottom: 1px dotted white; }
-  .date-1 span:last-child {
-    font-size: 1rem; }
+.date-1 {
+  width: 4em;
+  height: 5.5em; }
+  .date-1 span {
+    display: block;
+    padding: .3em; }
+    .date-1 span:first-child {
+      font-size: 2em;
+      border-bottom: 1px dotted white; }
+    .date-1 span:last-child {
+      font-size: 1em; }
 
 .calendar-column:last-child h3 {
   color: transparent; }
@@ -697,17 +694,11 @@ i.promotion-arrow:after {
   height: 25px;
   margin: .7rem; }
 
-a.events-link:before {
-  content: url("../img/eventListIconEvents.png"); }
-
-a.events-link:hover:before {
-  content: url("../img/eventListIconEvents_hover.png"); }
-
-a.news-link:before {
-  content: url("../img/eventListIconNews.png"); }
-
-a.news-link:hover:before {
-  content: url("../img/eventListIconNews_hover.png"); }
+.events-link i.fa,
+.news-link i.fa {
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-right: .5rem; }
 
 /* section-success */
 #section-success .button-link {
@@ -769,7 +760,7 @@ a.news-link:hover:before {
     content: url("../img/quote-grey.png");
     margin-right: .3rem; }
   .success-box .layer-bottom q:after {
-    content: url("../img/quote-blue.png");
+    content: url("../img/quote-blue-dark.png");
     display: block;
     text-align: right; }
   .success-box .layer-bottom q:before {
@@ -848,7 +839,7 @@ footer {
   float: left; }
 
 .links-column h3, #blog h3 {
-  margin-top: 2rem; }
+  margin-top: 1rem; }
 
 .links-column li {
   list-style: none;
@@ -861,17 +852,17 @@ footer {
   width: 30%;
   float: left;
   background-color: rgba(255, 255, 255, 0.15);
-  height: 100%; }
+  height: 100%;
+  padding: .2rem;
+  box-sizing: border-box; }
 
 #footer-links {
   position: relative; }
-
-#footer-links small {
-  position: absolute;
-  bottom: 1rem; }
-
-#footer-links > div {
-  margin-bottom: 3rem; }
+  #footer-links small {
+    position: absolute;
+    bottom: 1rem; }
+  #footer-links > div {
+    margin-bottom: 3rem; }
 
 #blog hr,
 #blog form {
@@ -879,9 +870,6 @@ footer {
 
 #blog form {
   margin-bottom: 2rem; }
-
-.blog-post {
-  padding-right: .5rem; }
 
 #blog form input,
 #blog form button {
@@ -900,22 +888,19 @@ footer {
   width: 30%;
   box-sizing: border-box;
   height: 1.5rem;
-  padding: 0.2rem;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px; }
 
 .date-2 {
   float: left;
   padding: 0.3em; }
-
-.date-2 > span {
-  text-align: center;
-  display: block; }
-
-.date-2 > span:first-child {
-  font-size: 3em;
-  margin: -0.2em 0.2em;
-  font-weight: bold; }
+  .date-2 span {
+    text-align: center;
+    display: block; }
+    .date-2 span:first-child {
+      font-size: 3em;
+      margin: -0.2em 0.2em;
+      font-weight: bold; }
 
 .footer-row {
   line-height: 3rem;
@@ -1041,6 +1026,11 @@ nav a {
   .topic-rect > a {
     font-size: 0.75rem; } }
 
+.carousel-nav > label {
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 40px; }
+
 #section-we-do > .section-content > h2,
 #section-calendar > .section-content > h2,
 #section-success > .section-content > h2 {
@@ -1058,7 +1048,7 @@ nav a {
   color: black; }
   @media (min-width: 500px) {
     #section-calendar .calendar-content > p {
-      font-size: .7rem; } }
+      font-size: .8rem; } }
 
 .calendar-column a {
   font-size: 0.8rem; }
