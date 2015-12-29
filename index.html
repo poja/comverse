@@ -57,11 +57,19 @@
 					<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
 				</div>
 				<a href="" class="button-link">Learn More</a>
-				<div class="carousel-nav-box">
-					<button class="carousel-nav selected">1</button>
-					<button class="carousel-nav">2</button>
-					<button class="carousel-nav">3</button>
-					<button class="carousel-nav">4</button>
+				<div class="carousel-nav">
+					<input type="radio" id="nav-radio-1" name="nav-radios" value="1"
+						checked="checked"></radio>
+					<label for="nav-radio-1"></label>
+
+					<input type="radio" id="nav-radio-2" name="nav-radios" value="2"></radio>
+					<label for="nav-radio-2"></label>
+
+					<input type="radio" id="nav-radio-3" name="nav-radios" value="3"></radio>
+					<label for="nav-radio-3"></label>
+
+					<input type="radio" id="nav-radio-4" name="nav-radios" value="4"></radio>
+					<label for="nav-radio-4"></label>
 				</div>
 			</div>
 			<div id="topics-holder" class="u-clearfix u-center">
@@ -89,38 +97,38 @@
 	<section id="section-we-do">
 		<div class="section-content">
 			<h2>What Can We Do For You?</h2>
-			<div class="u-clearfix">
-				<div class="icon-holder">
+			<ul class="u-clearfix">
+				<li class="icon-holder">
 					<img src="./img/solution_icon_biz-analitics.png" class="outside" alt="Data monetization">
 					<img src="./img/solution_icon_biz-analitics_hover.png"  class="inside" alt="Data monetization" />
 					<div class="image-label">Data monetization</div>
-				</div>
-				<div class="icon-holder">
+				</li>
+				<li class="icon-holder">
 					<img src="./img/solution_icon_diti-cx.png" class="outside" alt="Machine to machine (M2M)" />
 					<img src="./img/solution_icon_diti-cx_hover.png" class="inside" alt="Machine to machine (M2M)" />
 					<div class="image-label">Machine to machine (M2M)</div>
-				</div>
-				<div class="icon-holder">
+				</li>
+				<li class="icon-holder">
 					<img src="./img/solution_icon_optimize-efficnt.png" class="outside" alt="Over-the-top (OTT)" />
 					<img src="./img/solution_icon_optimize-efficnt_hover.png" class="inside" alt="Over-the-top (OTT)" />
 					<div class="image-label">Over-the-top (OTT)</div>
-				</div>
-				<div class="icon-holder">
+				</li>
+				<li class="icon-holder">
 					<img src="./img/solution_icon_biz-transform.png" class="outside" alt="Cloud computing" />
 					<img src="./img/solution_icon_biz-transform_hover.png" class="inside" alt="Cloud computing" />
 					<div class="image-label">Cloud computing</div>
-				</div>
-				<div class="icon-holder">
+				</li>
+				<li class="icon-holder">
 					<img src="./img/solution_icon_personal.png" class="outside" alt="Managed Services" />
 					<img src="./img/solution_icon_personal_hover.png" class="inside" alt="Managed Services" />
 					<div class="image-label">Managed Services</div>
-				</div>
-				<div class="icon-holder">
+				</li>
+				<li class="icon-holder">
 					<img src="./img/solution_icon_smart-money.png" class="outside" alt="Social Media" />
 					<img src="./img/solution_icon_smart-money_hover.png" class="inside" alt="Social Media" />
 					<div class="image-label">Social Media</div>
-				</div>
-			</div>
+				</li>
+			</ul>
 			<a href="" class="button-link screen-large">See all of our solutions</a>
 		</div>
 	</section>
@@ -131,11 +139,10 @@
 				<div class="calendar-column">
 					<h3>News</h3>
 					<div class="calendar-content u-clearfix">
-						<img src="./img/date.png" alt="Date">
-						<!-- <div class="date">
+						<div class="date-1">
 							<span>04</span>
 							<span>SEP</span>
-						</div> -->
+						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
 					<a class="news-link" href="">News</a>
@@ -143,7 +150,10 @@
 				<div class="calendar-column">
 					<h3>Events</h3>
 					<div class="calendar-content u-clearfix">
-						<img src="./img/date.png" alt="Date">
+						<div class="date-1">
+							<span>13</span>
+							<span>JAN</span>
+						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
 					<a class="events-link screen-large" href="">All Events</a>
@@ -151,7 +161,10 @@
 				<div class="calendar-column">
 					<h3 class="screen-large">Events</h3>
 					<div class="calendar-content u-clearfix">
-						<img src="./img/date.png" alt="Date">
+						<div class="date-1">
+							<span>12</span>
+							<span>DEC</span>
+						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
 					<a class="events-link" href="">All Events</a>
@@ -166,103 +179,170 @@
 			<h2>Success Stories</h2>
 			<div class="u-clearfix">
 				<div class="success-column">
+
 					<div class="success-box success-quote">
-						<div class="success-box-content">
-							<div class="success-top">
-								<img src="./img/CB-JP-face.png" alt="Jonathan Pierce">
-								<q>We have very good and very warm relations with Comverse. We always achieve great work with them and like to work with them and other nice compliments that one can give a company like Comverse.</q>
-							</div>
-							<hr />
-							<div class="success-bottom u-clearfix">
-								<div class="quote-source">
-									<p>Sergey Korotych</p>
-									<p>Deputy CTO, 3 Mob Ukraine</p>	
+						<div class="layer-top">
+							<div> <!-- Has padding inside the layer -->
+								<div class="success-top">
+									<img src="./img/CB-JP-face.png" alt="Jonathan Pierce">
+									<q>We have very good and very warm relations with Comverse. We always achieve great work with them and like to work with them and other nice compliments as such.</q>
 								</div>
-								<img class="u-grayscale" src="./img/3mob_w108px_X_h95px.jpg" alt="3 Mob Icon">
+								<hr />
+								<div class="success-bottom u-clearfix">
+									<div class="quote-source">
+										<p>Sergey Korotych</p>
+										<p>Deputy CTO, 3 Mob Ukraine</p>	
+									</div>
+									<img class="u-grayscale" src="./img/3mob_w108px_X_h95px.jpg" alt="3 Mob Icon">
+								</div>
+							</div>	
+						</div>
+						<div class="layer-bottom">
+							<div>
+								<q>We have very good and very warm relations with Comverse. We always achieve great work with them and like to work with them and other nice compliments as such.</q>
 							</div>
 						</div>
 					</div>
 					<div class="success-row u-clearfix">
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/cable_wireless_w100px_X_h42px2.jpg" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/cable_wireless_w100px_X_h42px2.jpg" alt="HP Inc icon" />
+								</div>	
+							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
 							</div>
 						</div>
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/Jersey_Telecom_w100px_X_h42px.jpg" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/Jersey_Telecom_w100px_X_h42px.jpg" alt="HP Inc icon" />
+								</div>	
+							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
 							</div>
 						</div>
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="HP Inc icon" />
+								</div>	
 							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
+							</div>							
 						</div>
 					</div>
+
 				</div>
 				<div class="success-column" id="success-column-2">
+
 					<div class="success-row u-clearfix">
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/MAX_telecom_w108px_X_h95.jpg" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/MAX_telecom_w108px_X_h95.jpg" alt="HP Inc icon" />
+								</div>	
+							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
 							</div>
 						</div>
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/mts_w108px_X_h95px.jpg" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/mts_w108px_X_h95px.jpg" alt="HP Inc icon" />
+								</div>	
 							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
+							</div>							
 						</div>
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/play_w108px_X_h95px.jpg" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/play_w108px_X_h95px.jpg" alt="HP Inc icon" />
+								</div>	
+							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
 							</div>
 						</div>
 					</div>
 					<div class="success-box success-quote">
-						<div class="success-box-content">
-							<div class="success-top">
-								<img src="./img/JT-GM-face.png" alt="Adale Kehassan">
-								<q>Comverse has demonstrated that they are partners, not just suppliers, because they understand our needs, out situations; together we are love love love love</q>
-							</div>
-							<hr />
-							<div class="success-bottom u-clearfix">
-								<div class="quote-source">
-									<p>Adalle Kehassan</p>
-									<p>CIO of Multi-links</p>	
+						<div class="layer-top">
+							<div>
+								<div class="success-top">
+									<img src="./img/JT-GM-face.png" alt="Adale Kehassan">
+									<q>Comverse has demonstrated that they are partners, not just suppliers, because they understand our needs, out situations; together we are love love love love.</q>
 								</div>
-								<img class="u-grayscale" src="./img/multilinks.jpg" alt="3 Mob Icon">
+								<hr />
+								<div class="success-bottom u-clearfix">
+									<div class="quote-source">
+										<p>Adalle Kehassan</p>
+										<p>CIO of Multi-links</p>	
+									</div>
+									<img class="u-grayscale" src="./img/multilinks.jpg" alt="3 Mob Icon">
+								</div>
+							</div>	
+						</div>
+						<div class="layer-bottom">
+							<div>
+								<q>Comverse has demonstrated that they are partners, not just suppliers, because they understand our needs, out situations; together we are love love love love.</q>	
 							</div>
 						</div>
 					</div>
+
 				</div>
 				<div class="success-column screen-large" id="success-column-3">
+
 					<div class="success-box success-quote">
-						<div class="success-box-content">
-							<div class="success-top">
-								<q>Comverse has been able to fully deliver what we want and we have peers that also say that they have peers that </q>
-							</div>
-							<hr />
-							<div class="success-bottom u-clearfix">
-								<div class="quote-source">
-									<p>Ravisahnker</p>
-									<p>Tata Sky CIO N.</p>	
+						<div class="layer-top">
+							<div>
+								<div class="success-top">
+									<q>Comverse has been able to fully deliver what we want and we have peers that also say that. </q>
 								</div>
-								<img class="u-grayscale" src="./img/Tata_Sky_w108px_X_h95px.jpg" alt="3 Mob Icon">
-							</div>
+								<hr />
+								<div class="success-bottom u-clearfix">
+									<div class="quote-source">
+										<p>Ravisahnker</p>
+										<p>Tata Sky CIO N.</p>	
+									</div>
+									<img class="u-grayscale" src="./img/Tata_Sky_w108px_X_h95px.jpg" alt="3 Mob Icon">
+								</div>
+							</div>	
+						</div>
+						<div class="layer-bottom">
+							<div>
+								<q>Comverse has been able to fully deliver what we want and we have peers that also say that. </q>	
+							</div>						
 						</div>
 					</div>
 					<div class="success-row u-clearfix">
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
+								</div>	
 							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
+							</div>							
 						</div>
 						<div class="success-icon success-box">
-							<div class="success-box-content">
-								<img class="u-grayscale" src="./img/VIDEOCON_w108px_X_h95px.jpg" alt="HP Inc icon" />
+							<div class="layer-top">
+								<div>
+									<img class="u-grayscale" src="./img/VIDEOCON_w108px_X_h95px.jpg" alt="HP Inc icon" />
+								</div>	
 							</div>
+							<div class="layer-bottom">
+								<a href="#"><div></div></a>
+							</div>							
 						</div>
 					</div>
+
 				</div>
 			</div>
 			<a href="" class="button-link">All 256 Success Stories</a>
@@ -314,7 +394,7 @@
 			<div id="blog">
 				<h3>Latest Blog Posts</h3>
 				<div class="blog-post">
-					<div class="date"> 
+					<div class="date-2"> 
 						<span>18</span>
 						<span>July</span>
 					</div>
@@ -358,5 +438,14 @@
 			<small>Copyright &copy; 2012 Comverse, Inc <a href="">Privacy Policy</a> <a href="">Sitemap</a></small>
 		</div>
 	</footer>
+
+
+	<!-- This HTML's purpose is ONLY to pre-load the following images. 
+		It does NOT have any visual impact. -->
+	<div class="preload">
+		<img src="./img/eventListIconEvents_hover.png" alt="Preloaded image. No display."></img>
+		<img src="./img/eventListIconNews_hover.png" alt="Preloaded image. No display."></img>
+	</div>
+
 </body>
 </html>
