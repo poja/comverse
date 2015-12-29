@@ -1,10 +1,13 @@
 /** 
 	NEEDS FIXING:
-		Success quote overflows and hover ?
-		Blue dates ?
-		Comver-responsive stuff ?
-		Mobile-first
+		Success quote overflows and hover
+		Check-box navigation
+		Font awesome
+		do-box
+		Rearrangement
+		Going over all requirements
 **/
+
 
 /***********************************/
 /******** Global variables *********/
@@ -40,6 +43,11 @@ $w-arrow: 5px;
    }
 }
 
+@keyframes raise {
+	0% { top: 0; }
+	100% { top: -15rem; }
+}
+
 /**********************************/
 /* Backgrounds, Colors, Opacities */
 /**********************************/
@@ -48,8 +56,10 @@ $w-arrow: 5px;
 $u-bg-main: '../img/slide-bg-complexity.jpg';
 $u-bg-main-mobile: '../img/slide-bg-complexity-mobile-new1.jpg';
 $u-bg-calendar: '../img/news-and-events-bg.jpg';
+$u-bg-calendar-mobile: '../img/news-and-events-bg-mobile.jpg';
 $u-bg-footer: '../img/iron-metal-background.png';
 $u-bg-wedo-texture: '../img/weDoBG.png';
+$u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
 
 $c-bg-wedo-side-blue: rgb(49, 139, 173);
 $c-bg-wedo-middle-blue: rgb(86, 183, 214);
@@ -68,6 +78,8 @@ $c-bg-buttonlink-top: #2B94C9; /* blue */
 
 $c-button-bright: #E5E5E5;	/* almost white */
 
+$c-date-blue: #3399CC;
+
 $c-mobilebutton-gray-bottom: #E0E0E0;
 $c-mobilebutton-gray-top: lighten($c-mobilebutton-gray-bottom, 5%);
 
@@ -76,6 +88,8 @@ $o-topicrect: 0.9;
 $o-calendarcontent: 0.5;
 $o-calendarcontent-hover: 0.7;
 
+$c-bg-success-box: #3AA6DB;
+
 $c-font-gray: rgb(86, 86, 86);
 $c-font-blue: #4DA6D2;
 
@@ -83,7 +97,6 @@ $c-hr-gray: #646464;
 
 
 #section-main {
-
 	#main-top {
 		background: url($u-bg-main-mobile) bottom no-repeat;
 		background-size: 100%;
@@ -98,8 +111,6 @@ $c-hr-gray: #646464;
 			background: none;
 		}
 	}
-
-
 }
 #section-we-do {
 	background: url($u-bg-wedo-texture) $c-bg-wedo-smallscreen-blue;
@@ -110,14 +121,29 @@ $c-hr-gray: #646464;
 	}
 }
 #section-calendar {
-	background: url($u-bg-calendar) center center fixed;
-	background-size: cover;
+	background: url($u-bg-calendar-mobile);
+	background-size: cover;	
+
+	@media(min-width: $w-screen-large) {
+		background: url($u-bg-calendar) center center fixed;
+		background-size: cover;
+	}
 }
 #section-success,
 footer .screen-small {
 	background-color: $c-bg-success-gray;
 }
 
+#section-success .success-icon .layer-bottom div {
+	background-image: url($u-bg-icon-success);
+	background-position: center center;
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	background-color: $c-bg-success-box;
+}
+#section-success .success-quote .layer-bottom div {
+	background-color: $c-bg-success-box;
+}
 
 
 
@@ -150,7 +176,7 @@ nav a {
 	}
 
 	@media(min-width: $w-screen-large) {
-		&, &.selected {
+		&, &.selected, &:hover {
 			color: transparent;			
 		}
 	}
@@ -186,8 +212,15 @@ nav a {
 	background-color: rgba(255, 255, 255, $o-calendarcontent-hover);
 }
 
-.success-box-content {
-	background-color: white;
+.date-1 {
+	background-color: $c-date-blue;
+	color: white;
+}
+
+.success-box  {
+	.layer-top > div {
+		background-color: white;
+	}
 }
 
 
@@ -246,6 +279,9 @@ header > .section-content > button {
 
 .success-bottom p:first-child {
 	color: $c-font-blue;
+}
+.success-quote .layer-bottom {
+	color: white;
 }
 
 #footer-links {
@@ -404,18 +440,8 @@ body, header, section, footer {
 	text-overflow: ellipsis;
 }
 
-.date {
-	float: left;
-	padding: 0.3em;
-}
-.date > span {
-	text-align: center;
-	display: block;
-}
-.date > span:first-child {
-	font-size: 3em;
-	margin: -0.2em 0.2em;
-	font-weight: bold;
+.preload {
+	display: none;
 }
 
 
@@ -824,8 +850,9 @@ i.promotion-arrow:after {
 	margin: 30px auto 20px auto;
 }
 
-#section-we-do > .section-content > div.u-clearfix {
+#section-we-do > .section-content > .u-clearfix {
 	font-size: 0;	/* inline-block space fix */
+	padding: 0;
 }
 
 .icon-holder {
@@ -870,6 +897,7 @@ i.promotion-arrow:after {
 
 /* section-calendar */
 
+
 #section-calendar {
 	padding-bottom: 5rem;
 }
@@ -904,7 +932,7 @@ i.promotion-arrow:after {
 	margin-bottom: .5rem;
 }
 
-#section-calendar .calendar-content > img {
+#section-calendar .calendar-content > .date-1 {
 	width: 25%;
 	float: left;
 }
@@ -916,6 +944,24 @@ i.promotion-arrow:after {
 	margin: 0;
 	float: left;
 }
+
+.date-1 {
+	span {
+		display: block;
+		padding: .3rem;
+
+		&:first-child {
+			font-size: 2rem;
+			border-bottom: 1px dotted white;
+		}
+		&:last-child {
+			font-size: 1rem;
+		}
+	}
+}
+
+
+
 
 .calendar-column:last-child h3 {
 	color: transparent;
@@ -950,9 +996,8 @@ a.news-link:hover:before {
 
 /* section-success */
 
-.u-flip-x {
-	transform: scaleX(-1);
-}
+$p-success-between-boxes: .2rem;
+$p-success-inside-box: .5rem;
 
 #section-success .button-link {
 	margin: 0 auto;
@@ -982,52 +1027,112 @@ a.news-link:hover:before {
 	}
 }
 
+
+/* Layout of the layers */
+.success-box {	
+	overflow: hidden;
+
+	.layer-top {
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+	}
+	.layer-bottom {
+		box-sizing: border-box;
+		position: absolute;
+		top: $p-success-between-boxes;
+		bottom: $p-success-between-boxes;
+		left: $p-success-between-boxes;
+		right: $p-success-between-boxes;
+		z-index: 0;
+		overflow: hidden;
+
+	}
+	.layer-top > div, .layer-bottom div {
+		padding: $p-success-inside-box;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+	}
+}
+.success-box:hover .layer-top {
+	animation: raise 2s;
+	animation-fill-mode: forwards;
+}
+
+/* Success box components */
+.success-box {
+	padding: $p-success-between-boxes;
+	position: relative;
+
+	img {
+		width: 100%;
+	}
+
+	.layer-top q:before {
+		content: url('../img/quote-grey.png');
+		margin-right: .3rem;
+	}
+	.layer-bottom q:after { 
+		content: url('../img/quote-blue.png');
+		display: block;
+		text-align: right;
+	}
+	.layer-bottom q:before { 
+		content: '';
+	}
+
+	hr {
+		border-style: solid;
+		border-color: #E2E2E2; /* gray */
+		border-bottom: none;
+	}
+}
+
+
+
 .success-icon {
 	float: left;
 	width: 33.3%;
 	box-sizing: border-box;
 }
 
-.success-icon img {
-	width: 100%;
-}
 
-.success-box {
-	padding: 0.2rem;
-}
-
-.success-quote .success-box-content {
-	padding: .5rem;
-}
 
 .success-top {
 	height: 7rem;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	position: relative;
 
 	@media(min-width: $w-screen-large) {
 		height: 5rem;
 	}
+
+	img {
+		width: 40%;
+		box-sizing: border-box;
+		padding-right: .5rem;
+	}
+
+	q {
+		width: 60%;
+		float: right;
+
+		&:after {
+			content: "...";
+			position: absolute;
+			bottom: -.2rem;
+			right: .2rem;
+			/* background: white; */
+		}
+	}
 }
 
-.success-top img {
-	width: 40%;
-	box-sizing: border-box;
-	padding-right: .5rem;
-}
-
-.success-top q {
-	width: 60%;
-	float: right;
-}
 #success-column-3 .success-top q {
 	width: 100%;
 }
 
-.success-top q:before {
-	content: url('../img/quote-grey.png');
-	margin-right: .3rem;
-}
 
 .success-bottom img {
 	width: 20%;
@@ -1047,12 +1152,6 @@ a.news-link:hover:before {
 
 .success-bottom p {
 	margin: 0;
-}
-
-.success-box hr {
-	border-style: solid;
-	border-color: #E2E2E2; /* gray */
-	border-bottom: none;
 }
 
 #section-success .button-link {
@@ -1155,6 +1254,20 @@ footer {
 	padding: 0.2rem;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px
+}
+
+.date-2 {
+	float: left;
+	padding: 0.3em;
+}
+.date-2 > span {
+	text-align: center;
+	display: block;
+}
+.date-2 > span:first-child {
+	font-size: 3em;
+	margin: -0.2em 0.2em;
+	font-weight: bold;
 }
 
 
@@ -1370,6 +1483,9 @@ nav a {
 	font-size: 0.8rem;
 }
 
+.date-1 {
+	text-align: center;
+}
 
 .success-bottom {
 	font-size: 0.75rem;

@@ -1,9 +1,11 @@
 /** 
 	NEEDS FIXING:
-		Success quote overflows and hover ?
-		Blue dates ?
-		Comver-responsive stuff ?
-		Mobile-first
+		Success quote overflows and hover
+		Check-box navigation
+		Font awesome
+		do-box
+		Rearrangement
+		Going over all requirements
 **/
 /***********************************/
 /******** Global variables *********/
@@ -31,6 +33,11 @@
   border: 5px solid transparent;
   border-left: 5px solid black; }
 
+@keyframes raise {
+  0% {
+    top: 0; }
+  100% {
+    top: -15rem; } }
 /**********************************/
 /* Backgrounds, Colors, Opacities */
 /**********************************/
@@ -58,12 +65,26 @@
       background: linear-gradient(90deg, #318bad, #56b7d6, #318bad); } }
 
 #section-calendar {
-  background: url("../img/news-and-events-bg.jpg") center center fixed;
+  background: url("../img/news-and-events-bg-mobile.jpg");
   background-size: cover; }
+  @media (min-width: 500px) {
+    #section-calendar {
+      background: url("../img/news-and-events-bg.jpg") center center fixed;
+      background-size: cover; } }
 
 #section-success,
 footer .screen-small {
   background-color: #E0E0E0; }
+
+#section-success .success-icon .layer-bottom div {
+  background-image: url("../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg");
+  background-position: center center;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-color: #3AA6DB; }
+
+#section-success .success-quote .layer-bottom div {
+  background-color: #3AA6DB; }
 
 nav a {
   color: black; }
@@ -85,7 +106,7 @@ nav a {
     background-color: #1188C4;
     color: white; }
   @media (min-width: 500px) {
-    .carousel-nav, .carousel-nav.selected {
+    .carousel-nav, .carousel-nav.selected, .carousel-nav:hover {
       color: transparent; } }
 
 @media (min-width: 500px) {
@@ -113,7 +134,11 @@ nav a {
 .calendar-content:hover {
   background-color: rgba(255, 255, 255, 0.7); }
 
-.success-box-content {
+.date-1 {
+  background-color: #3399CC;
+  color: white; }
+
+.success-box .layer-top > div {
   background-color: white; }
 
 .footer-row {
@@ -156,6 +181,9 @@ header > .section-content > button {
 
 .success-bottom p:first-child {
   color: #4DA6D2; }
+
+.success-quote .layer-bottom {
+  color: white; }
 
 #footer-links {
   color: white; }
@@ -262,18 +290,8 @@ body, header, section, footer {
   overflow: scroll-y;
   text-overflow: ellipsis; }
 
-.date {
-  float: left;
-  padding: 0.3em; }
-
-.date > span {
-  text-align: center;
-  display: block; }
-
-.date > span:first-child {
-  font-size: 3em;
-  margin: -0.2em 0.2em;
-  font-weight: bold; }
+.preload {
+  display: none; }
 
 /* Header */
 header {
@@ -583,9 +601,10 @@ i.promotion-arrow:after {
 #section-we-do .button-link {
   margin: 30px auto 20px auto; }
 
-#section-we-do > .section-content > div.u-clearfix {
+#section-we-do > .section-content > .u-clearfix {
   font-size: 0;
-  /* inline-block space fix */ }
+  /* inline-block space fix */
+  padding: 0; }
 
 .icon-holder {
   width: 33%;
@@ -642,7 +661,7 @@ i.promotion-arrow:after {
 #section-calendar h3 {
   margin-bottom: .5rem; }
 
-#section-calendar .calendar-content > img {
+#section-calendar .calendar-content > .date-1 {
   width: 25%;
   float: left; }
 
@@ -652,6 +671,15 @@ i.promotion-arrow:after {
   padding: 0 .5rem;
   margin: 0;
   float: left; }
+
+.date-1 span {
+  display: block;
+  padding: .3rem; }
+  .date-1 span:first-child {
+    font-size: 2rem;
+    border-bottom: 1px dotted white; }
+  .date-1 span:last-child {
+    font-size: 1rem; }
 
 .calendar-column:last-child h3 {
   color: transparent; }
@@ -679,9 +707,6 @@ a.news-link:hover:before {
   content: url("../img/eventListIconNews_hover.png"); }
 
 /* section-success */
-.u-flip-x {
-  transform: scaleX(-1); }
-
 #section-success .button-link {
   margin: 0 auto; }
 
@@ -705,43 +730,82 @@ a.news-link:hover:before {
     #success-column-2 {
       flex-direction: column; } }
 
+/* Layout of the layers */
+.success-box {
+  overflow: hidden; }
+  .success-box .layer-top {
+    position: relative;
+    z-index: 1;
+    overflow: hidden; }
+  .success-box .layer-bottom {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    left: 0.2rem;
+    right: 0.2rem;
+    z-index: 0;
+    overflow: hidden; }
+  .success-box .layer-top > div, .success-box .layer-bottom div {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; }
+
+.success-box:hover .layer-top {
+  animation: raise 2s;
+  animation-fill-mode: forwards; }
+
+/* Success box components */
+.success-box {
+  padding: 0.2rem;
+  position: relative; }
+  .success-box img {
+    width: 100%; }
+  .success-box .layer-top q:before {
+    content: url("../img/quote-grey.png");
+    margin-right: .3rem; }
+  .success-box .layer-bottom q:after {
+    content: url("../img/quote-blue.png");
+    display: block;
+    text-align: right; }
+  .success-box .layer-bottom q:before {
+    content: ''; }
+  .success-box hr {
+    border-style: solid;
+    border-color: #E2E2E2;
+    /* gray */
+    border-bottom: none; }
+
 .success-icon {
   float: left;
   width: 33.3%;
   box-sizing: border-box; }
 
-.success-icon img {
-  width: 100%; }
-
-.success-box {
-  padding: 0.2rem; }
-
-.success-quote .success-box-content {
-  padding: .5rem; }
-
 .success-top {
   height: 7rem;
   text-overflow: ellipsis;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   @media (min-width: 500px) {
     .success-top {
       height: 5rem; } }
-
-.success-top img {
-  width: 40%;
-  box-sizing: border-box;
-  padding-right: .5rem; }
-
-.success-top q {
-  width: 60%;
-  float: right; }
+  .success-top img {
+    width: 40%;
+    box-sizing: border-box;
+    padding-right: .5rem; }
+  .success-top q {
+    width: 60%;
+    float: right; }
+    .success-top q:after {
+      content: "...";
+      position: absolute;
+      bottom: -.2rem;
+      right: .2rem;
+      /* background: white; */ }
 
 #success-column-3 .success-top q {
   width: 100%; }
-
-.success-top q:before {
-  content: url("../img/quote-grey.png");
-  margin-right: .3rem; }
 
 .success-bottom img {
   width: 20%;
@@ -759,12 +823,6 @@ a.news-link:hover:before {
 
 .success-bottom p {
   margin: 0; }
-
-.success-box hr {
-  border-style: solid;
-  border-color: #E2E2E2;
-  /* gray */
-  border-bottom: none; }
 
 #section-success .button-link {
   margin-top: 1.5rem; }
@@ -842,6 +900,19 @@ footer {
   padding: 0.2rem;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px; }
+
+.date-2 {
+  float: left;
+  padding: 0.3em; }
+
+.date-2 > span {
+  text-align: center;
+  display: block; }
+
+.date-2 > span:first-child {
+  font-size: 3em;
+  margin: -0.2em 0.2em;
+  font-weight: bold; }
 
 .footer-row {
   line-height: 3rem;
@@ -988,6 +1059,9 @@ nav a {
 
 .calendar-column a {
   font-size: 0.8rem; }
+
+.date-1 {
+  text-align: center; }
 
 .success-bottom {
   font-size: 0.75rem; }
