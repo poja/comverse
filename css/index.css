@@ -281,11 +281,14 @@ footer .wrapper-select > select {
 body, header, section, footer {
   margin: 0; }
 
-[id^="section"]:not(#section-main) {
+[id^="section"] {
   padding: 20px; }
 
+#section-main {
+  padding: 0; }
+
 @media (min-width: 500px) {
-  [id^="section"]:not(#section-main) {
+  [id^="section"] {
     padding: 10px; }
 
   #section-main {
@@ -294,8 +297,13 @@ body, header, section, footer {
   overflow: scroll-y;
   text-overflow: ellipsis; }
 
-.preload {
-  display: none; }
+.invisolabel {
+  font-size: 0;
+  display: table-cell;
+  /* so that it doesnt effect other elements */
+  margin: 0;
+  padding: 0;
+  visibility: hidden; }
 
 /* Header */
 header {
@@ -568,8 +576,8 @@ i.promotion-arrow:after {
 
 .topic-rect i.fa {
   font-size: 1.6rem;
-  vertical-align: middle;
-  margin-right: .5rem; }
+  margin-right: .5rem;
+  vertical-align: middle; }
 
 .carousel-nav {
   margin-bottom: 2rem; }
@@ -641,7 +649,7 @@ i.promotion-arrow:after {
 
 /* section-calendar */
 #section-calendar {
-  padding-bottom: 5rem; }
+  padding-bottom: 3.5rem; }
 
 .calendar-column {
   float: left;
@@ -688,17 +696,11 @@ i.promotion-arrow:after {
   border-radius: 3px;
   box-shadow: 0 2px 12px gray; }
 
-.calendar-column a:before {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin: .7rem; }
-
 .events-link i.fa,
 .news-link i.fa {
   font-size: 1.2rem;
-  vertical-align: middle;
-  margin-right: .5rem; }
+  margin-right: .5rem;
+  vertical-align: bottom; }
 
 /* section-success */
 #section-success .button-link {

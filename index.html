@@ -27,8 +27,9 @@
 			<div id="do-box" class="screen-large"> 
 				<!-- Language choice + search + customer login link --> 
 				
+				<label for="lang-select" class="invisolabel">Language</label>
 				<div class="wrapper-select">
-					<select name="language">
+					<select name="language" id="lang-select">
 						<optgroup>
 							<option value="English">EN</option>
 							<option value="Hebrew">HE</option>	
@@ -36,7 +37,8 @@
 					</select>
 				</div>
 				<a href="#" id="login-link">Customer Login</a>
-				<input></input>
+				<label for="input-search" class="invisolabel">Search:</label>
+				<input id="input-search"></input>
 				<a href="#" id="search-link"><img src="./img/searchBtn.png" alt="Search Button"></a>
 			</div>
 			<div class="float-under-header screen-small" id="search-mobile">
@@ -56,7 +58,7 @@
 					<h3>Comverse Policy Studio</h3>
 					<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
 				</div>
-				<a href="" class="button-link">Learn More</a>
+				<a href="#" class="button-link">Learn More</a>
 				<div class="carousel-nav">
 					<input type="radio" id="nav-radio-1" name="nav-radios" value="1"
 						checked="checked"></radio>
@@ -135,7 +137,7 @@
 					<div class="image-label">Social Media</div>
 				</li>
 			</ul>
-			<a href="" class="button-link screen-large">See all of our solutions</a>
+			<a href="#" class="button-link screen-large">See all of our solutions</a>
 		</div>
 	</section>
 	<section id="section-calendar">
@@ -151,7 +153,7 @@
 						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="news-link" href="">
+					<a class="news-link" href="#">
 						<i class="fa fa-newspaper-o"></i>
 						All News
 					</a>
@@ -165,7 +167,7 @@
 						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="events-link screen-large" href="">
+					<a class="events-link screen-large" href="#">
 						<i class="fa fa-calendar"></i>
 						All Events
 					</a>
@@ -179,7 +181,7 @@
 						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="events-link" href="">
+					<a class="events-link" href="#">
 						<i class="fa fa-calendar"></i>
 						All Events
 					</a>
@@ -360,7 +362,7 @@
 
 				</div>
 			</div>
-			<a href="" class="button-link">All 256 Success Stories</a>
+			<a href="#" class="button-link">All 256 Success Stories</a>
 		</div>
 	</section>
 	<footer>
@@ -404,7 +406,7 @@
 						</ul>
 					</div>
 				</div>
-				<small>Copyright &copy; 2012 Comverse, Inc | <a href="">Privacy Policy</a></small>
+				<small>Copyright &copy; 2012 Comverse, Inc | <a href="#">Privacy Policy</a></small>
 			</div>
 			<div id="blog">
 				<h3>Latest Blog Posts</h3>
@@ -418,7 +420,8 @@
 				<hr>
 				<h3>Subscribe to Comverse</h3>
 				<form action="" id="subscribe-form" class="u-clearfix">
-					<input></input>
+					<label for="input-email-sign-up" class="invisolabel">Email:</label>
+					<input id="input-email-sign-up"></input>
 					<button>Sign Up</button>	
 				</form>
 
@@ -433,8 +436,8 @@
 		</div>
 		<div class="section-content screen-small">
 			<a class="arrow-up-mobile" href="#"></a>
-			<div class="footer-row"><a>Contact Us</a></div>
-			<div class="footer-row"><a>Subscribe to Comverse News</a></div>
+			<div class="footer-row"><a href="#">Contact Us</a></div>
+			<div class="footer-row"><a href="#">Subscribe to Comverse News</a></div>
 			<div class="footer-row">Visit us on:
 				<div class="icon-group">
 					<a href="http://youtube.com" class="blog-icon"><img src="./img/socialMenuIcon-youtube.png" alt="Youtube Icon" class="u-grayscale"></a>
@@ -442,25 +445,19 @@
 					<a href="http://linkedin.com" class="blog-icon"><img src="./img/socialMenuIcon-linkdin.png" alt="LinkedIn Icon" class="u-grayscale"></a>	
 				</div>
 			</div>
-			<div class="footer-row">Change language:
+			<div class="footer-row">
+				<label for="lang-select-mobile">Change language:</label>
 				<div class="wrapper-select">
-					<select name="language">
+					<select name="language" id="lang-select-mobile">
 						<option value="English">English</option>
 						<option value="Hebrew">Hebrew</option>
 					</select>
 				</div>
 			</div>
-			<small>Copyright &copy; 2012 Comverse, Inc <a href="">Privacy Policy</a> <a href="">Sitemap</a></small>
+			<small>Copyright &copy; 2012 Comverse, Inc <a href="#">Privacy Policy</a> <a href="#">Sitemap</a></small>
 		</div>
 	</footer>
 
-
-	<!-- This HTML's purpose is ONLY to pre-load the following images. 
-		It does NOT have any visual impact. -->
-	<div class="preload">
-		<img src="./img/eventListIconEvents_hover.png" alt="Preloaded image. No display."></img>
-		<img src="./img/eventListIconNews_hover.png" alt="Preloaded image. No display."></img>
-	</div>
 
 </body>
 </html>

@@ -427,11 +427,14 @@ body, header, section, footer {
 }
 
 
-[id^="section"]:not(#section-main) {
+[id^="section"] {
 	padding: $p-section-content;
 }
+#section-main {
+	padding: 0;
+}
 @media(min-width: $w-screen-large) {
-	[id^="section"]:not(#section-main) {
+	[id^="section"] {
 		padding: $p-section-content / 2;
 	}
 	#section-main {
@@ -444,8 +447,12 @@ body, header, section, footer {
 	text-overflow: ellipsis;
 }
 
-.preload {
-	display: none;
+.invisolabel {
+	font-size: 0;
+	display: table-cell; /* so that it doesnt effect other elements */
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
 }
 
 
@@ -800,8 +807,8 @@ i.promotion-arrow:after {
 
 .topic-rect i.fa {
     font-size: 1.6rem;
-    vertical-align: middle;
     margin-right: .5rem;	
+    vertical-align: middle;
 }
 
 
@@ -905,7 +912,7 @@ i.promotion-arrow:after {
 
 
 #section-calendar {
-	padding-bottom: 5rem;
+	padding-bottom: 3.5rem;
 }
 
 .calendar-column {
@@ -976,18 +983,12 @@ i.promotion-arrow:after {
 	box-shadow: 0 2px 12px gray;
 }
 
-.calendar-column a:before {
-	display: inline-block;
-	width: 25px;
-    height: 25px;
-	margin: .7rem;
-}
 
 .events-link i.fa,
 .news-link i.fa {
 	font-size: 1.2rem;
-    vertical-align: middle;
     margin-right: .5rem;
+    vertical-align: bottom;
 }
 
 
