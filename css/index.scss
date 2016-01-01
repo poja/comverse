@@ -1,6 +1,10 @@
 /** 
 	NEEDS FIXING:
 		do-box
+		sub-menus
+		IE 
+		style-guide
+		Open Sans font?
 		Rearrangement
 		Going over all requirements
 **/
@@ -152,7 +156,7 @@ nav a {
 }
 
 
-.carousel-window-desc {
+#carousel-window-1 {
 	background-color: rgba($c-bg-buttonlink-middle, 0.8);
 
 
@@ -170,6 +174,7 @@ nav a {
 
 	@media(min-width: $w-screen-large) {
 		color: transparent;
+		// font-size: 0;
 	}
 }
 
@@ -180,6 +185,7 @@ nav a {
 
 	@media(min-width: $w-screen-large) {
 		color: transparent;
+		// font-size: 0;
 	}
 }
 
@@ -416,10 +422,10 @@ $p-section-content: 20px;
 
 
 .button-link:after {
-  content: "\25BA";
-  display: inline-block;
-  position: absolute;
-  right: 10px;
+ 	content: "\25BA";
+ 	display: inline-block;
+ 	position: absolute;
+ 	right: 10px;
 }
 
 body, header, section, footer {
@@ -471,7 +477,7 @@ $w-header-nav: 60%;
 $w-header-dobox: 18%;
 
 $h-header-mobile: 4.5rem;
-$p-bottom-header-mobile: .7rem;
+$p-bottom-header-mobile: .2rem;
 
 header {
 	padding-bottom: $p-bottom-header-mobile;
@@ -529,14 +535,18 @@ header > div > a {
 header > .section-content {
 	text-align: center; /* to center the image */
 }
-header img {
+header h1 {
 	width: 130px;
 	padding: .5rem 0;
-	display: inline;
+	margin: 0;
+	display: inline-block;
+
+	img {
+		width: 100%;
+	}
 }
 @media(min-width: $w-screen-large) {
-	header img {
-		display: inline-block;
+	header h1 {
 		width: $w-header-img;
 		margin: 0;
 	}
@@ -675,6 +685,9 @@ nav {
 	border-right: none;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+	background-image: url($u-divider);
+	background-position: right;
+	background-repeat: no-repeat;
 	float: left;
 	height: 1.1rem;
 	padding: .1rem .5rem;
@@ -699,6 +712,7 @@ nav {
 	width: 20%;
 	box-sizing: border-box;
 	border: 1px solid #D0D0D0; /* gray*/
+	border-left: 0;
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	display: block;
@@ -736,13 +750,25 @@ $w-button-carousel: 40px;
 	padding-bottom: .1 * $p-section-content;
 }
 
+
+.carousel {
+	display: block;
+	padding: 0;
+	margin: 0;
+
+	li {
+		display: block;
+		list-style: none;
+	}
+}
+
 @media(min-width: $w-screen-large) {
-	.carousel-window-desc {
+	#carousel-window-1 {
 		width: 50%;
 		margin-bottom: 0;
 	}	
 }
-.carousel-window-desc {
+#carousel-window-1 {
 	padding: 1.5rem;
 
 	h3 {
@@ -754,6 +780,33 @@ $w-button-carousel: 40px;
 	}
 }
 
+
+.carousel-nav {
+	margin-bottom: 2rem;
+	border: 0;
+	padding: 0;
+
+	input[type="radio"] {
+		visibility: hidden;
+		width: 0;
+		margin: 0;
+	}
+
+	label {
+		display: inline-block;
+		height: $w-button-carousel;
+		width: $w-button-carousel;
+		border-radius: 4px;
+		border: none;
+
+		@media(min-width: $w-screen-large) {
+			height: 15px;
+			width: 15px;
+			border-radius: 25%;
+			margin: 0;
+		}
+	}
+}
 
 .topic-rect {
 	position: relative;
@@ -774,7 +827,6 @@ $w-button-carousel: 40px;
 		}
 	}
 }
-
 
 .topic-rect > .text-box {
 	text-overflow: none;
@@ -813,30 +865,6 @@ i.promotion-arrow:after {
 
 
 
-.carousel-nav {
-	margin-bottom: 2rem;;
-
-	input[type="radio"] {
-		visibility: hidden;
-		width: 0;
-		margin: 0;
-	}
-
-	label {
-		display: inline-block;
-		height: $w-button-carousel;
-		width: $w-button-carousel;
-		border-radius: 4px;
-		border: none;
-
-		@media(min-width: $w-screen-large) {
-			height: 15px;
-			width: 15px;
-			border-radius: 25%;
-			margin: 0;
-		}
-	}
-}
 
 .carousel-nav, #section-main .button-link {
 	margin-left: $p-section-content;
@@ -1044,6 +1072,11 @@ $p-success-inside-box: .5rem;
 		right: $p-success-between-boxes;
 		z-index: 0;
 		overflow: hidden;
+
+		a {
+			display: block;
+			height: 100%;
+		}
 
 	}
 	.layer-top > div, .layer-bottom div {
@@ -1408,6 +1441,9 @@ nav,
 	text-transform: uppercase;
 }
 
+.graphical-link {
+	font-size: 0;
+}
 
 nav a {
 
@@ -1529,7 +1565,8 @@ nav li {
 	font-size: 0.6rem;
 }
 
-.footer-row {
+.footer-row,
+.footer-row > a {
 	color: white;
 }
 
@@ -1570,7 +1607,8 @@ nav a,
 .topic-rect > a, 
 #footer-links small a,
 .calendar-column a,
-footer .screen-small small a {
+footer .screen-small small a,
+footer .screen-small .footer-row > a {
 	text-decoration: none;
 }
 

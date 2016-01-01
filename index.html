@@ -6,13 +6,15 @@
 	<title>Comverse</title>
 	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
 	<link href="css/index.css" rel='stylesheet' type='text/css' />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/ext/font-awesome/css/font-awesome.min.css" />
 </head> 
 <body>
 	<header>
 		<div class="section-content">
-			<a href="#nav-main"><button class="screen-small sandwich"></button></a>
-			<img src="img/comverse-logo.png" alt="Comverse Logo" />
+			<a href="#nav-main">
+				<button class="screen-small sandwich graphical-link">Navigation</button>
+			</a>
+			<h1><a href="#"><img src="img/comverse-logo.png" alt="Comverse" /></a></h1>
 			<nav id="nav-main">
 				<div class="float-under-header">
 					<ul class="u-clearfix">
@@ -20,13 +22,12 @@
 						<a href="#"><li>Our Portfolio</li></a>
 						<a href="#"><li>News &amp; Media</li></a>
 						<a href="#"><li>About Comverse</li></a>
-						<a href="#collapse-nav"><li class="screen-small">CLOSE</li></a>
+						<a href="#"><li class="screen-small">CLOSE</li></a>
 					</ul>
 				</div>
 			</nav>
 			<div id="do-box" class="screen-large"> 
-				<!-- Language choice + search + customer login link --> 
-				
+				<!-- Language choice + search + customer login link --> 		
 				<label for="lang-select" class="invisolabel">Language</label>
 				<div class="wrapper-select">
 					<select name="language" id="lang-select">
@@ -36,30 +37,41 @@
 						</optgroup>
 					</select>
 				</div>
+
 				<a href="#" id="login-link">Customer Login</a>
+
 				<label for="input-search" class="invisolabel">Search:</label>
 				<input id="input-search"></input>
-				<a href="#" id="search-link"><img src="./img/searchBtn.png" alt="Search Button"></a>
+				<a href="#" id="search-link" class="graphical-link">Search</a>
 			</div>
 			<div class="float-under-header screen-small" id="search-mobile">
 				<div>
-					<input type="text"></input>
-					<a href="#"><i class="fa fa-times"></i></a> <!-- x button to close search -->
+					<label for="input-search-mobile" class="invisolabel">Search query:</label>
+					<input id="input-search-mobile" type="text"></input>
+					<a href="#" class="graphical-link">
+						Close Search
+						<i class="fa fa-times"></i>
+					</a> <!-- x button to close search -->
 				</div>
 			</div>
-			<a href="#search-mobile"><button class="screen-small search"></button></a>
+			<a href="#search-mobile">
+				<button class="screen-small search graphical-link">Open Search Bar</button>
+			</a>
 		</div>
 	</header>
 	<main id="section-main">
 		<div class="section-content">
 			<div id="main-top">
-				<div class="carousel-window-desc">
-					<h2><span class="u-bold">Free</span> Your Marketplace From IT <span class="u-bold">Complexity</span></h2>
-					<h3>Comverse Policy Studio</h3>
-					<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
-				</div>
-				<a href="#" class="button-link">Learn More</a>
-				<div class="carousel-nav">
+				<ul class="carousel">
+					<li id="carousel-window-1">
+						<h2><span class="u-bold">Free</span> Your Marketplace From IT <span class="u-bold">Complexity</span></h2>
+						<h3>Comverse Policy Studio</h3>
+						<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
+						<a href="#" class="button-link">Learn More</a>
+					</li>
+				</ul>
+				<fieldset class="carousel-nav">
+					<legend class="invisolabel">Choose page:</legend>
 					<input type="radio" id="nav-radio-1" name="nav-radios" value="1"
 						checked="checked"></radio>
 					<label for="nav-radio-1">1</label>
@@ -72,7 +84,7 @@
 
 					<input type="radio" id="nav-radio-4" name="nav-radios" value="4"></radio>
 					<label for="nav-radio-4">4</label>
-				</div>
+				</fieldset>
 			</div>
 			<div id="topics-holder" class="u-clearfix u-center">
 				<div class="topic-rect">
@@ -107,33 +119,33 @@
 			<h2>What Can We Do For You?</h2>
 			<ul class="u-clearfix">
 				<li class="icon-holder">
-					<img src="./img/solution_icon_biz-analitics.png" class="outside" alt="Data monetization">
-					<img src="./img/solution_icon_biz-analitics_hover.png"  class="inside" alt="Data monetization" />
+					<img src="./img/solution_icon_biz-analitics.png" class="outside" alt="">
+					<img src="./img/solution_icon_biz-analitics_hover.png" class="inside" alt="" />
 					<div class="image-label">Data monetization</div>
 				</li>
 				<li class="icon-holder">
-					<img src="./img/solution_icon_diti-cx.png" class="outside" alt="Machine to machine (M2M)" />
-					<img src="./img/solution_icon_diti-cx_hover.png" class="inside" alt="Machine to machine (M2M)" />
+					<img src="./img/solution_icon_diti-cx.png" class="outside" alt="" />
+					<img src="./img/solution_icon_diti-cx_hover.png" class="inside" alt="" />
 					<div class="image-label">Machine to machine (M2M)</div>
 				</li>
 				<li class="icon-holder">
-					<img src="./img/solution_icon_optimize-efficnt.png" class="outside" alt="Over-the-top (OTT)" />
-					<img src="./img/solution_icon_optimize-efficnt_hover.png" class="inside" alt="Over-the-top (OTT)" />
+					<img src="./img/solution_icon_optimize-efficnt.png" class="outside" alt="" />
+					<img src="./img/solution_icon_optimize-efficnt_hover.png" class="inside" alt="" />
 					<div class="image-label">Over-the-top (OTT)</div>
 				</li>
 				<li class="icon-holder">
-					<img src="./img/solution_icon_biz-transform.png" class="outside" alt="Cloud computing" />
-					<img src="./img/solution_icon_biz-transform_hover.png" class="inside" alt="Cloud computing" />
+					<img src="./img/solution_icon_biz-transform.png" class="outside" alt="" />
+					<img src="./img/solution_icon_biz-transform_hover.png" class="inside" alt="" />
 					<div class="image-label">Cloud computing</div>
 				</li>
 				<li class="icon-holder">
-					<img src="./img/solution_icon_personal.png" class="outside" alt="Managed Services" />
-					<img src="./img/solution_icon_personal_hover.png" class="inside" alt="Managed Services" />
+					<img src="./img/solution_icon_personal.png" class="outside" alt="" />
+					<img src="./img/solution_icon_personal_hover.png" class="inside" alt="" />
 					<div class="image-label">Managed Services</div>
 				</li>
 				<li class="icon-holder">
-					<img src="./img/solution_icon_smart-money.png" class="outside" alt="Social Media" />
-					<img src="./img/solution_icon_smart-money_hover.png" class="inside" alt="Social Media" />
+					<img src="./img/solution_icon_smart-money.png" class="outside" alt="" />
+					<img src="./img/solution_icon_smart-money_hover.png" class="inside" alt="" />
 					<div class="image-label">Social Media</div>
 				</li>
 			</ul>
@@ -224,31 +236,40 @@
 						<div class="success-icon success-box">
 							<div class="layer-top">
 								<div>
-									<img class="u-grayscale" src="./img/cable_wireless_w100px_X_h42px2.jpg" alt="HP Inc icon" />
+									<img class="u-grayscale" src="./img/cable_wireless_w100px_X_h42px2.jpg" alt="Cabel Wireless icon" />
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>
 						</div>
 						<div class="success-icon success-box">
 							<div class="layer-top">
 								<div>
-									<img class="u-grayscale" src="./img/Jersey_Telecom_w100px_X_h42px.jpg" alt="HP Inc icon" />
+									<img class="u-grayscale" src="./img/Jersey_Telecom_w100px_X_h42px.jpg" alt="Jersey Telecom icon" />
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>
 						</div>
 						<div class="success-icon success-box">
 							<div class="layer-top">
 								<div>
-									<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="HP Inc icon" />
+									<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="Kyivstar Icon" />
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>							
 						</div>
 					</div>
@@ -260,31 +281,40 @@
 						<div class="success-icon success-box">
 							<div class="layer-top">
 								<div>
-									<img class="u-grayscale" src="./img/MAX_telecom_w108px_X_h95.jpg" alt="HP Inc icon" />
+									<img class="u-grayscale" src="./img/MAX_telecom_w108px_X_h95.jpg" alt="MAX Telecom icon" />
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>
 						</div>
 						<div class="success-icon success-box">
 							<div class="layer-top">
 								<div>
-									<img class="u-grayscale" src="./img/mts_w108px_X_h95px.jpg" alt="HP Inc icon" />
+									<img class="u-grayscale" src="./img/mts_w108px_X_h95px.jpg" alt="MTS icon" />
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>							
 						</div>
 						<div class="success-icon success-box">
 							<div class="layer-top">
 								<div>
-									<img class="u-grayscale" src="./img/play_w108px_X_h95px.jpg" alt="HP Inc icon" />
+									<img class="u-grayscale" src="./img/play_w108px_X_h95px.jpg" alt="Play Inc icon" />
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -301,7 +331,7 @@
 										<p>Adalle Kehassan</p>
 										<p>CIO of Multi-links</p>	
 									</div>
-									<img class="u-grayscale" src="./img/multilinks.jpg" alt="3 Mob Icon">
+									<img class="u-grayscale" src="./img/multilinks.jpg" alt="Multilinks Icon">
 								</div>
 							</div>	
 						</div>
@@ -327,7 +357,7 @@
 										<p>Ravisahnker</p>
 										<p>Tata Sky CIO N.</p>	
 									</div>
-									<img class="u-grayscale" src="./img/Tata_Sky_w108px_X_h95px.jpg" alt="3 Mob Icon">
+									<img class="u-grayscale" src="./img/Tata_Sky_w108px_X_h95px.jpg" alt="Tata Sky Icon">
 								</div>
 							</div>	
 						</div>
@@ -345,17 +375,23 @@
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>							
 						</div>
 						<div class="success-icon success-box">
 							<div class="layer-top">
 								<div>
-									<img class="u-grayscale" src="./img/VIDEOCON_w108px_X_h95px.jpg" alt="HP Inc icon" />
+									<img class="u-grayscale" src="./img/VIDEOCON_w108px_X_h95px.jpg" alt="Videocon icon" />
 								</div>	
 							</div>
 							<div class="layer-bottom">
-								<a href="#"><div></div></a>
+								<a href="#" class="graphical-link">
+									Read about this suggestion
+									<div></div>
+								</a>
 							</div>							
 						</div>
 					</div>
@@ -435,7 +471,7 @@
 			</div>
 		</div>
 		<div class="section-content screen-small">
-			<a class="arrow-up-mobile" href="#"></a>
+			<a class="arrow-up-mobile graphical-link" href="#">Top</a>
 			<div class="footer-row"><a href="#">Contact Us</a></div>
 			<div class="footer-row"><a href="#">Subscribe to Comverse News</a></div>
 			<div class="footer-row">Visit us on:

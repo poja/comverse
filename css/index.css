@@ -1,6 +1,10 @@
 /** 
 	NEEDS FIXING:
 		do-box
+		sub-menus
+		IE 
+		style-guide
+		Open Sans font?
 		Rearrangement
 		Going over all requirements
 **/
@@ -88,10 +92,10 @@ nav a {
 #search-mobile a {
   background-color: white; }
 
-.carousel-window-desc {
+#carousel-window-1 {
   background-color: rgba(29, 142, 198, 0.8); }
   @media (min-width: 500px) {
-    .carousel-window-desc {
+    #carousel-window-1 {
       background-color: transparent;
       opacity: 1; } }
 
@@ -307,7 +311,7 @@ body, header, section, footer {
 
 /* Header */
 header {
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.2rem;
   height: 4.5rem; }
   @media (min-width: 500px) {
     header {
@@ -350,14 +354,16 @@ header > .section-content {
   text-align: center;
   /* to center the image */ }
 
-header img {
+header h1 {
   width: 130px;
   padding: .5rem 0;
-  display: inline; }
+  margin: 0;
+  display: inline-block; }
+  header h1 img {
+    width: 100%; }
 
 @media (min-width: 500px) {
-  header img {
-    display: inline-block;
+  header h1 {
     width: 20%;
     margin: 0; }
 
@@ -369,7 +375,7 @@ header img {
 div.float-under-header {
   position: absolute;
   z-index: 1;
-  padding-top: 5.2rem;
+  padding-top: 4.7rem;
   width: 100%;
   top: 0;
   left: 0; }
@@ -472,6 +478,9 @@ nav {
   border-right: none;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  background-image: url("../img/divider.png");
+  background-position: right;
+  background-repeat: no-repeat;
   float: left;
   height: 1.1rem;
   padding: .1rem .5rem; }
@@ -493,6 +502,7 @@ nav {
   box-sizing: border-box;
   border: 1px solid #D0D0D0;
   /* gray*/
+  border-left: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   display: block;
@@ -521,17 +531,46 @@ nav {
 #main-top {
   padding-bottom: 2px; }
 
+.carousel {
+  display: block;
+  padding: 0;
+  margin: 0; }
+  .carousel li {
+    display: block;
+    list-style: none; }
+
 @media (min-width: 500px) {
-  .carousel-window-desc {
+  #carousel-window-1 {
     width: 50%;
     margin-bottom: 0; } }
-.carousel-window-desc {
+#carousel-window-1 {
   padding: 1.5rem; }
-  .carousel-window-desc h3 {
+  #carousel-window-1 h3 {
     margin: 0; }
   @media (min-width: 500px) {
-    .carousel-window-desc {
+    #carousel-window-1 {
       padding: 0; } }
+
+.carousel-nav {
+  margin-bottom: 2rem;
+  border: 0;
+  padding: 0; }
+  .carousel-nav input[type="radio"] {
+    visibility: hidden;
+    width: 0;
+    margin: 0; }
+  .carousel-nav label {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    border: none; }
+    @media (min-width: 500px) {
+      .carousel-nav label {
+        height: 15px;
+        width: 15px;
+        border-radius: 25%;
+        margin: 0; } }
 
 .topic-rect {
   position: relative;
@@ -578,25 +617,6 @@ i.promotion-arrow:after {
   font-size: 1.6rem;
   margin-right: .5rem;
   vertical-align: middle; }
-
-.carousel-nav {
-  margin-bottom: 2rem; }
-  .carousel-nav input[type="radio"] {
-    visibility: hidden;
-    width: 0;
-    margin: 0; }
-  .carousel-nav label {
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    border-radius: 4px;
-    border: none; }
-    @media (min-width: 500px) {
-      .carousel-nav label {
-        height: 15px;
-        width: 15px;
-        border-radius: 25%;
-        margin: 0; } }
 
 .carousel-nav, #section-main .button-link {
   margin-left: 20px; }
@@ -742,6 +762,9 @@ i.promotion-arrow:after {
     right: 0.2rem;
     z-index: 0;
     overflow: hidden; }
+    .success-box .layer-bottom a {
+      display: block;
+      height: 100%; }
   .success-box .layer-top > div, .success-box .layer-bottom div {
     padding: 0.5rem;
     width: 100%;
@@ -1001,6 +1024,9 @@ nav,
 .footer-row {
   text-transform: uppercase; }
 
+.graphical-link {
+  font-size: 0; }
+
 nav a {
   text-align: left; }
   nav a:last-child li {
@@ -1086,7 +1112,8 @@ nav li {
 #blog form button {
   font-size: 0.6rem; }
 
-.footer-row {
+.footer-row,
+.footer-row > a {
   color: white; }
 
 footer div.screen-small small,
@@ -1112,7 +1139,8 @@ nav a,
 .topic-rect > a,
 #footer-links small a,
 .calendar-column a,
-footer .screen-small small a {
+footer .screen-small small a,
+footer .screen-small .footer-row > a {
   text-decoration: none; }
 
 /*# sourceMappingURL=index.css.map */
