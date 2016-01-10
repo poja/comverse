@@ -55,7 +55,7 @@ $w-arrow: 5px;
 
 
 $u-bg-main: '../img/slide-bg-complexity.jpg';
-$u-bg-main-mobile: '../img/slide-bg-complexity-mobile-new1.jpg';
+$u-bg-main-mobile: '../img/slide-bg-complexity.jpg';
 $u-bg-calendar: '../img/news-and-events-bg.jpg';
 $u-bg-calendar-mobile: '../img/news-and-events-bg-mobile.jpg';
 $u-bg-footer: '../img/iron-metal-background.png';
@@ -99,8 +99,8 @@ $c-hr-gray: #646464;
 
 #section-main {
 	#main-top {
-		background: url($u-bg-main-mobile) bottom no-repeat;
-		background-size: 100%;
+		background: url($u-bg-main-mobile) center center;
+		background-size: cover;	
 		background-color: #0E217E; /* backup color */
 	}
 
@@ -175,7 +175,6 @@ nav a,
 
 	@media(min-width: $w-screen-large) {
 		color: transparent;
-		// font-size: 0;
 	}
 }
 
@@ -186,7 +185,6 @@ nav a,
 
 	@media(min-width: $w-screen-large) {
 		color: transparent;
-		// font-size: 0;
 	}
 }
 
@@ -476,7 +474,7 @@ $u-search-img-mobile: '../img/searchBtnMobile.png';
 
 $w-header-img: 20%;
 $w-header-nav: 55%;
-$w-header-dobox: 23%;
+$w-header-dobox: 25%;
 
 $w-header-img-screenmid: 15%;
 $w-header-nav-screenmid: 58%;
@@ -491,7 +489,7 @@ header {
 	font-size: 0;
 
 	@media(min-width: $w-screen-large) {
-		padding-bottom: .2rem;
+		padding-bottom: .7rem;
 		height: auto;
 	}
 }
@@ -701,17 +699,20 @@ nav {
 	border: 1px solid $c-font-gray;
 	border-left: 0;
 	margin-top: 4px;
+
+	i {
+		vertical-align: middle;
+	}
 }
 
 
 
 #do-box {
-	float: right;
+	vertical-align: text-bottom;
 
 	* {
 		box-sizing: border-box;
 	}
-
 }
 
 
@@ -837,18 +838,20 @@ $w-button-carousel: 40px;
 		height: $w-button-carousel;
 		width: $w-button-carousel;
 		border-radius: 4px;
-		border: none;
+		border: 1px solid gray;
 
 		@media(min-width: $w-screen-large) {
 			height: 15px;
 			width: 15px;
 			border-radius: 25%;
 			margin: 0;
+			border: 0;
 		}
 	}
 }
 
 .topic-rect {
+	display: block;
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
@@ -891,7 +894,7 @@ i.promotion-arrow:after {
 	top: 50%;
 }
 
-.topic-rect > a {
+.topic-rect > span {
 	display: inline-block;
 	font-weight: bold;
 	margin-bottom: 10px;
@@ -1500,6 +1503,10 @@ nav a {
 
 #search-mobile a {
 	color: $c-font-gray;
+
+	i {
+		font-size: 1rem;
+	}
 }
 
 .text-box {
@@ -1510,7 +1517,7 @@ nav a {
 	}
 }
 
-.topic-rect > a {
+.topic-rect > span {
 	@media(min-width: $w-screen-large) {
 		font-size: 0.75rem;
 	}	
@@ -1640,7 +1647,7 @@ button,
 nav a,
 #do-box a,
 #search-mobile a,
-.topic-rect > a, 
+.topic-rect, 
 #footer-links a,
 .calendar-column a,
 footer .screen-small small a,
