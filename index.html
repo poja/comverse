@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=9"> <!-- IE10 render like IE9 -->
 	<title>Comverse</title>
 	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
 	<link href="css/index.css" rel='stylesheet' type='text/css' />
@@ -10,73 +11,71 @@
 </head> 
 <body>
 	<header>
-		<div class="section-content">
-			<a href="#nav-main">
-				<button class="screen-small sandwich graphical-link">Navigation</button>
+		<div class="Section-content">
+			<a href="#nav-main" class="u-screenSmall">
+				<button class="HeaderButton--hamburger u-graphicalLink">Navigation</button>
 			</a>
 			<h1><a href="#"><img src="img/comverse-logo.png" alt="Comverse" /></a></h1>
-			<nav id="nav-main">
-				<div class="float-under-header">
-					<ul class="u-clearfix">
-						<a href="#"><li>Your Needs</li></a>
-						<a href="#"><li>Our Portfolio</li></a>
-						<a href="#"><li>News &amp; Media</li></a>
-						<a href="#"><li>About Comverse</li></a>
-						<a href="#"><li class="screen-small">CLOSE</li></a>
+			<nav id="nav-main" class="ResponsiveNav">
+				<div class="u-floatUnderHeader">
+					<ul>
+						<li><a href="#">Your Needs</a></li>
+						<li><a href="#">Our Portfolio</a></li>
+						<li><a href="#">News &amp; Media</a></li>
+						<li><a href="#">About Comverse</a></li>
+						<li class="u-screenSmall"><a href="#">CLOSE</a></li>
 					</ul>
 				</div>
 			</nav>
-			<div id="do-box" class="screen-large"> 
+			<div class="ActionBox u-screenLarge u-cleanLinks"> 
 				<!-- Language choice + search + customer login link --> 	
 
-				<!-- First line of do-box -->
+				<!-- First line of ActionBox -->
 				<div>
-					<label for="lang-select" class="invisolabel">Language</label>
-					<div class="wrapper-select">
-						<select name="language" id="lang-select">
-							<option value="English">EN</option>
-							<option value="Hebrew">HE</option>	
-						</select>
-					</div>	
-					<a href="#" id="login-link">Customer Login</a>
+					<label for="lang-select" class="u-invisolabel">Language</label>	
+					<select name="language" id="lang-select">
+						<option value="English">EN</option>
+						<option value="Hebrew">HE</option>	
+					</select>
+					<a href="#" class="ActionBox-loginLink u-cleanLinks">Customer Login</a>
 				</div>	
 				
-				<!-- Second line of do-box -->
-				<div class="search">
-					<label for="input-search" class="invisolabel">Search:</label>
+				<!-- Second line of ActionBox -->
+				<div class="SearchBox">
+					<label for="input-search" class="u-invisolabel">Search:</label>
 					<input id="input-search"></input>
-					<a href="#" class="graphical-link">Search</a>	
+					<a href="#" class="u-graphicalLink">Search</a>	
 				</div>
 
 			</div>
-			<div class="float-under-header screen-small" id="search-mobile">
+			<div class="MobileSearch u-floatUnderHeader u-screenSmall">
 				<div>
-					<label for="input-search-mobile" class="invisolabel">Search query:</label>
+					<label for="input-search-mobile" class="u-invisolabel">Search query:</label>
 					<input id="input-search-mobile" type="text"></input>
-					<a href="#" class="graphical-link">
+					<a href="#" class="u-graphicalLink">
 						Close Search
 						<i class="fa fa-times"></i>
 					</a> <!-- x button to close search -->
 				</div>
 			</div>
-			<a href="#search-mobile">
-				<button class="screen-small search graphical-link">Open Search Bar</button>
+			<a href="#search-mobile" class="u-screenSmall">
+				<button class="HeaderButton--search u-graphicalLink">Open Search Bar</button>
 			</a>
 		</div>
 	</header>
-	<main id="section-main">
-		<div class="section-content">
-			<div id="main-top">
-				<ul class="carousel">
-					<li id="carousel-window-1">
+	<main class="Section--main">
+		<div class="Section-content">
+			<div class="Section-top">
+				<ul class="Carousel">
+					<li class="Carousel-window">
 						<h2><span class="u-bold">Free</span> Your Marketplace From IT <span class="u-bold">Complexity</span></h2>
 						<h3>Comverse Policy Studio</h3>
 						<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
-						<a href="#" class="button-link">Learn More</a>
+						<a href="#" class="ButtonLink u-uppercase">Learn More</a>
 					</li>
 				</ul>
-				<fieldset class="carousel-nav">
-					<legend class="invisolabel">Choose page:</legend>
+				<fieldset class="CarouselNavigator">
+					<legend class="u-invisolabel">Choose page:</legend>
 					<input type="radio" id="nav-radio-1" name="nav-radios" value="1"
 						checked="checked"></radio>
 					<label for="nav-radio-1">1</label>
@@ -91,26 +90,26 @@
 					<label for="nav-radio-4">4</label>
 				</fieldset>
 			</div>
-			<div id="topics-holder" class="u-clearfix u-center">
-				<a class="topic-rect" href="#">
-					<h3 class="text-box">Comverse Is Value-Added Service Global Market Leader.</h3>
-					<i class="screen-small promotion-arrow"></i>
+			<div class="u-clearfix u-center u-cleanLinks">
+				<a class="TopicRect--pink" href="#">
+					<h3>Comverse Is Value-Added Service Global Market Leader.</h3>
+					<i class="u-screenSmall promotion-arrow"></i>
 					<span>
 						<i class="fa fa-link"></i>
 						Read More
 					</span>
 				</a>
-				<a class="topic-rect" href="#">
-					<h3 class="text-box">Managed Services World Congress September 18-19 Berlin, Germany</h3>
-					<i class="screen-small promotion-arrow"></i>
+				<a class="TopicRect--green" href="#">
+					<h3>Managed Services World Congress September 18-19 Berlin, Germany</h3>
+					<i class="u-screenSmall promotion-arrow"></i>
 					<span>
 						<i class="fa fa-file-text-o"></i>
 						Read More
 					</span>
 				</a>
-				<a class="topic-rect" href="#">
-					<h3 class="text-box">Comverse: Enabling a world of Connected Possibilities</h3>
-					<i class="screen-small promotion-arrow"></i>
+				<a class="TopicRect--orange" href="#">
+					<h3>Comverse: Enabling a world of Connected Possibilities</h3>
+					<i class="u-screenSmall promotion-arrow"></i>
 					<span>
 						<i class="fa fa-play-circle-o"></i>
 						Watch Now
@@ -119,86 +118,86 @@
 			</div>
 		</div>
 	</main>
-	<section id="section-we-do">
-		<div class="section-content">
+	<section class="Section--weDo">
+		<div class="Section-content">
 			<h2>What Can We Do For You?</h2>
 			<ul class="u-clearfix">
-				<li class="icon-holder">
-					<img src="./img/solution_icon_biz-analitics.png" class="outside" alt="">
-					<img src="./img/solution_icon_biz-analitics_hover.png" class="inside" alt="" />
-					<div class="image-label">Data monetization</div>
+				<li class="WeDoIcon">
+					<img src="./img/solution_icon_biz-analitics.png" class="WeDoIcon-outside" alt="">
+					<img src="./img/solution_icon_biz-analitics_hover.png" class="WeDoIcon-inside" alt="" />
+					<label>Data monetization</label>
 				</li>
-				<li class="icon-holder">
-					<img src="./img/solution_icon_diti-cx.png" class="outside" alt="" />
-					<img src="./img/solution_icon_diti-cx_hover.png" class="inside" alt="" />
-					<div class="image-label">Machine to machine (M2M)</div>
+				<li class="WeDoIcon">
+					<img src="./img/solution_icon_diti-cx.png" class="WeDoIcon-outside" alt="" />
+					<img src="./img/solution_icon_diti-cx_hover.png" class="WeDoIcon-inside" alt="" />
+					<label>Machine to machine (M2M)</label>
 				</li>
-				<li class="icon-holder">
-					<img src="./img/solution_icon_optimize-efficnt.png" class="outside" alt="" />
-					<img src="./img/solution_icon_optimize-efficnt_hover.png" class="inside" alt="" />
-					<div class="image-label">Over-the-top (OTT)</div>
+				<li class="WeDoIcon">
+					<img src="./img/solution_icon_optimize-efficnt.png" class="WeDoIcon-outside" alt="" />
+					<img src="./img/solution_icon_optimize-efficnt_hover.png" class="WeDoIcon-inside" alt="" />
+					<label>Over-the-top (OTT)</label>
 				</li>
-				<li class="icon-holder">
-					<img src="./img/solution_icon_biz-transform.png" class="outside" alt="" />
-					<img src="./img/solution_icon_biz-transform_hover.png" class="inside" alt="" />
-					<div class="image-label">Cloud computing</div>
+				<li class="WeDoIcon">
+					<img src="./img/solution_icon_biz-transform.png" class="WeDoIcon-outside" alt="" />
+					<img src="./img/solution_icon_biz-transform_hover.png" class="WeDoIcon-inside" alt="" />
+					<label>Cloud computing</label>
 				</li>
-				<li class="icon-holder">
-					<img src="./img/solution_icon_personal.png" class="outside" alt="" />
-					<img src="./img/solution_icon_personal_hover.png" class="inside" alt="" />
-					<div class="image-label">Managed Services</div>
+				<li class="WeDoIcon">
+					<img src="./img/solution_icon_personal.png" class="WeDoIcon-outside" alt="" />
+					<img src="./img/solution_icon_personal_hover.png" class="WeDoIcon-inside" alt="" />
+					<label>Managed Services</label>
 				</li>
-				<li class="icon-holder">
-					<img src="./img/solution_icon_smart-money.png" class="outside" alt="" />
-					<img src="./img/solution_icon_smart-money_hover.png" class="inside" alt="" />
-					<div class="image-label">Social Media</div>
+				<li class="WeDoIcon">
+					<img src="./img/solution_icon_smart-money.png" class="WeDoIcon-outside" alt="" />
+					<img src="./img/solution_icon_smart-money_hover.png" class="WeDoIcon-inside" alt="" />
+					<label>Social Media</label>
 				</li>
 			</ul>
-			<a href="#" class="button-link screen-large">See all of our solutions</a>
+			<a href="#" class="ButtonLink u-screenLarge">See all of our solutions</a>
 		</div>
 	</section>
-	<section id="section-calendar">
-		<div class="section-content">
+	<section class="Section--calendar">
+		<div class="Section-content">
 			<h2>What's Happening At Comverse?</h2>
 			<div class="u-clearfix">
-				<div class="calendar-column">
+				<div class="CalendarColumn">
 					<h3>News</h3>
-					<div class="calendar-content u-clearfix">
-						<div class="date-1">
+					<div class="BlogPost--light u-clearfix">
+						<div class="Date--bright">
 							<span>04</span>
 							<span>SEP</span>
 						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="news-link" href="#">
+					<a class="CalendarColumn-topicLink" href="#">
 						<i class="fa fa-newspaper-o"></i>
 						All News
 					</a>
 				</div>
-				<div class="calendar-column">
+				<div class="CalendarColumn">
 					<h3>Events</h3>
-					<div class="calendar-content u-clearfix">
-						<div class="date-1">
+					<div class="BlogPost--light u-clearfix">
+						<div class="Date--bright">
 							<span>13</span>
 							<span>JAN</span>
 						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="events-link screen-large" href="#">
+					<a class="CalendarColumn-topicLink u-screenLarge" href="#">
 						<i class="fa fa-calendar"></i>
 						All Events
 					</a>
 				</div>
-				<div class="calendar-column">
-					<h3 class="screen-large">Events</h3>
-					<div class="calendar-content u-clearfix">
-						<div class="date-1">
+				<div class="CalendarColumn">
+					<h3 class="u-screenLarge">Events</h3>
+					<div class="BlogPost--light u-clearfix">
+						<div class="Date--bright">
 							<span>12</span>
 							<span>DEC</span>
 						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</div>
-					<a class="events-link" href="#">
+					<a class="CalendarColumn-topicLink" href="#">
 						<i class="fa fa-calendar"></i>
 						All Events
 					</a>
@@ -208,22 +207,22 @@
 		</div>
 
 	</section>
-	<section id="section-success">
-		<div class="section-content">
+	<section class="Section--success">
+		<div class="Section-content">
 			<h2>Success Stories</h2>
 			<div class="u-clearfix">
-				<div class="success-column">
+				<div class="SuccessColumn">
 
-					<div class="success-box success-quote">
-						<div class="layer-top">
+					<div class="SuccessQuote">
+						<div class="SuccessBox-layerTop">
 							<div> <!-- Has padding inside the layer -->
-								<div class="success-top">
+								<div class="SuccessQuote-top">
 									<img src="./img/CB-JP-face.png" alt="Jonathan Pierce">
 									<q>We have very good and very warm relations with Comverse. We always achieve great work with them and appreciate working with them them and other nice compliments as such.</q>
 								</div>
 								<hr />
-								<div class="success-bottom u-clearfix">
-									<div class="quote-source">
+								<div class="SuccessQuote-bottom u-clearfix">
+									<div class="SuccessQuote-quoteeInfo">
 										<p>Sergey Korotych</p>
 										<p>Deputy CTO, 3 Mob Ukraine</p>	
 									</div>
@@ -231,47 +230,47 @@
 								</div>
 							</div>	
 						</div>
-						<div class="layer-bottom">
+						<div class="SuccessBox-layerBottom">
 							<div>
-								<q>We have very good and very warm relations with Comverse. We always achieve great work with them and appreciatework with them and other nice compliments as such.</q>
+								<q>We have very good and very warm relations with Comverse. We always achieve great work with them and appreciate working with them and other nice compliments as such.</q>
 							</div>
 						</div>
 					</div>
-					<div class="success-row u-clearfix">
-						<div class="success-icon success-box">
-							<div class="layer-top">
+					<div class="SuccessRow u-clearfix">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/cable_wireless_w100px_X_h42px2.jpg" alt="Cabel Wireless icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
 							</div>
 						</div>
-						<div class="success-icon success-box">
-							<div class="layer-top">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/Jersey_Telecom_w100px_X_h42px.jpg" alt="Jersey Telecom icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
 							</div>
 						</div>
-						<div class="success-icon success-box">
-							<div class="layer-top">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="Kyivstar Icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
@@ -280,59 +279,59 @@
 					</div>
 
 				</div>
-				<div class="success-column" id="success-column-2">
+				<div class="SuccessColumn u-mobileFlip">
 
-					<div class="success-row u-clearfix">
-						<div class="success-icon success-box">
-							<div class="layer-top">
+					<div class="SuccessRow u-clearfix">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/MAX_telecom_w108px_X_h95.jpg" alt="MAX Telecom icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
 							</div>
 						</div>
-						<div class="success-icon success-box">
-							<div class="layer-top">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/mts_w108px_X_h95px.jpg" alt="MTS icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
 							</div>							
 						</div>
-						<div class="success-icon success-box">
-							<div class="layer-top">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/play_w108px_X_h95px.jpg" alt="Play Inc icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
 							</div>
 						</div>
 					</div>
-					<div class="success-box success-quote">
-						<div class="layer-top">
+					<div class="SuccessQuote">
+						<div class="SuccessBox-layerTop">
 							<div>
-								<div class="success-top">
+								<div class="SuccessQuote-top">
 									<img src="./img/JT-GM-face.png" alt="Adale Kehassan">
 									<q>Comverse has demonstrated that they are partners, not just suppliers, because they understand our needs, out situations; together we are love love love love.</q>
 								</div>
 								<hr />
-								<div class="success-bottom u-clearfix">
-									<div class="quote-source">
+								<div class="SuccessQuote-bottom u-clearfix">
+									<div class="SuccessQuote-quoteeInfo">
 										<p>Adalle Kehassan</p>
 										<p>CIO of Multi-links</p>	
 									</div>
@@ -340,7 +339,7 @@
 								</div>
 							</div>	
 						</div>
-						<div class="layer-bottom">
+						<div class="SuccessBox-layerBottom">
 							<div>
 								<q>Comverse has demonstrated that they are partners, not just suppliers, because they understand our needs, out situations; together we are love love love love.</q>	
 							</div>
@@ -348,17 +347,17 @@
 					</div>
 
 				</div>
-				<div class="success-column screen-large" id="success-column-3">
+				<div class="SuccessColumn--narrow u-screenLarge">
 
-					<div class="success-box success-quote">
-						<div class="layer-top">
+					<div class="SuccessQuote">
+						<div class="SuccessBox-layerTop">
 							<div>
-								<div class="success-top">
+								<div class="SuccessQuote-top">
 									<q>Comverse has been able to fully deliver what we want and we have peers that also say that saying Comverse has been able to is true.</q>
 								</div>
 								<hr />
-								<div class="success-bottom u-clearfix">
-									<div class="quote-source">
+								<div class="SuccessQuote-bottom u-clearfix">
+									<div class="SuccessQuote-quoteeInfo">
 										<p>Ravisahnker</p>
 										<p>Tata Sky CIO N.</p>	
 									</div>
@@ -366,34 +365,34 @@
 								</div>
 							</div>	
 						</div>
-						<div class="layer-bottom">
+						<div class="SuccessBox-layerBottom">
 							<div>
 								<q>Comverse has been able to fully deliver what we want and we have peers that also say that saying Comverse has been able to is true.</q>	
 							</div>						
 						</div>
 					</div>
-					<div class="success-row u-clearfix">
-						<div class="success-icon success-box">
-							<div class="layer-top">
+					<div class="SuccessRow u-clearfix">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/hp_icon.png" alt="HP Inc icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
 							</div>							
 						</div>
-						<div class="success-icon success-box">
-							<div class="layer-top">
+						<div class="SuccessIcon">
+							<div class="SuccessBox-layerTop">
 								<div>
 									<img class="u-grayscale" src="./img/VIDEOCON_w108px_X_h95px.jpg" alt="Videocon icon" />
 								</div>	
 							</div>
-							<div class="layer-bottom">
-								<a href="#" class="graphical-link">
+							<div class="SuccessBox-layerBottom">
+								<a href="#" class="u-graphicalLink">
 									Read about this suggestion
 									<div></div>
 								</a>
@@ -403,14 +402,14 @@
 
 				</div>
 			</div>
-			<a href="#" class="button-link">All 256 Success Stories</a>
+			<a href="#" class="ButtonLink">All 256 Success Stories</a>
 		</div>
 	</section>
 	<footer>
-		<div class="section-content u-clearfix screen-large">
-			<div id="footer-links">
+		<div class="Section-content u-clearfix u-screenLarge">
+			<div class="Footer-links">
 				<div class="u-clearfix">
-					<div class="links-column">
+					<div class="Footer-linksColumn">
 						<h3>Key Solutions</h3>
 						<ul>
 							<li><a href="#">Monetizing Data</a></li>
@@ -424,7 +423,7 @@
 							<li><a href="#">4G/LTE</a></li>
 						</ul>
 					</div>
-					<div class="links-column">
+					<div class="Footer-linksColumn">
 						<h3>Products And Services</h3>
 						<ul>
 							<li><a href="#">Billing</a></li>
@@ -434,7 +433,7 @@
 							<li><a href="#">Training Services</a></li>
 						</ul>
 					</div>
-					<div class="links-column">
+					<div class="Footer-linksColumn">
 						<h3>Company</h3>
 						<ul>
 							<li><a href="#">executive profiles</a></li>
@@ -447,12 +446,14 @@
 						</ul>
 					</div>
 				</div>
-				<small>Copyright &copy; 2012 Comverse, Inc | <a href="#">Privacy Policy</a></small>
+				<small class="u-cleanLinks">
+					Copyright &copy; 2012 Comverse, Inc | <a href="#">Privacy Policy</a>
+				</small>
 			</div>
-			<div id="blog">
+			<div class="BlogWindow">
 				<h3>Latest Blog Posts</h3>
-				<div class="blog-post">
-					<div class="date-2"> 
+				<div class="BlogPost--dark">
+					<div class="Date--dark"> 
 						<span>18</span>
 						<span>July</span>
 					</div>
@@ -460,35 +461,35 @@
 				</div>
 				<hr>
 				<h3>Subscribe to Comverse</h3>
-				<form action="" id="subscribe-form" class="u-clearfix">
-					<label for="input-email-sign-up" class="invisolabel">Email:</label>
+				<div id="subscribe-form" class="SignUpBar">
+					<label for="input-email-sign-up" class="u-invisolabel">Email:</label>
 					<input id="input-email-sign-up"></input>
 					<button>Sign Up</button>	
-				</form>
+				</div>
 
-				<div class="icon-group">
-					<a href="http://youtube.com" class="blog-icon"><img src="./img/socialMenuIcon-youtube.png" alt="Youtube Icon" class="u-grayscale"></a>
-					<a href="http://twitter.com" class="blog-icon"><img src="./img/socialMenuIcon-twitter.png" alt="Twitter Icon" class="u-grayscale"></a>
-					<a href="http://linkedin.com" class="blog-icon"><img src="./img/socialMenuIcon-linkdin.png" alt="LinkedIn Icon" class="u-grayscale"></a>	
+				<div class="IconGroup">
+					<a href="http://youtube.com"><img src="./img/socialMenuIcon-youtube.png" alt="Youtube Icon"></a>
+					<a href="http://twitter.com"><img src="./img/socialMenuIcon-twitter.png" alt="Twitter Icon"></a>
+					<a href="http://linkedin.com"><img src="./img/socialMenuIcon-linkdin.png" alt="LinkedIn Icon"></a>	
 				</div>
 				
 
 			</div>
 		</div>
-		<div class="section-content screen-small">
-			<a class="arrow-up-mobile graphical-link" href="#">Top</a>
-			<div class="footer-row"><a href="#">Contact Us</a></div>
-			<div class="footer-row"><a href="#">Subscribe to Comverse News</a></div>
-			<div class="footer-row">Visit us on:
-				<div class="icon-group">
-					<a href="http://youtube.com" class="blog-icon"><img src="./img/socialMenuIcon-youtube.png" alt="Youtube Icon" class="u-grayscale"></a>
-					<a href="http://twitter.com" class="blog-icon"><img src="./img/socialMenuIcon-twitter.png" alt="Twitter Icon" class="u-grayscale"></a>
-					<a href="http://linkedin.com" class="blog-icon"><img src="./img/socialMenuIcon-linkdin.png" alt="LinkedIn Icon" class="u-grayscale"></a>	
+		<div class="Section-content u-screenSmall u-cleanLinks">
+			<a class="ArrowToTop" href="#">Top</a>
+			<div class="Footer-row--first"><a href="#">Contact Us</a></div>
+			<div class="Footer-row"><a href="#">Subscribe to Comverse News</a></div>
+			<div class="Footer-row">Visit us on:
+				<div class="IconGroup">
+					<a href="http://youtube.com"><img src="./img/socialMenuIcon-youtube.png" alt="Youtube Icon"></a>
+					<a href="http://twitter.com"><img src="./img/socialMenuIcon-twitter.png" alt="Twitter Icon"></a>
+					<a href="http://linkedin.com"><img src="./img/socialMenuIcon-linkdin.png" alt="LinkedIn Icon"></a>	
 				</div>
 			</div>
-			<div class="footer-row">
+			<div class="Footer-row">
 				<label for="lang-select-mobile">Change language:</label>
-				<div class="wrapper-select">
+				<div class="WhiteSelectWrapper">
 					<select name="language" id="lang-select-mobile">
 						<option value="English">English</option>
 						<option value="Hebrew">Hebrew</option>
