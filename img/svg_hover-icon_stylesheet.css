@@ -1,0 +1,6 @@
+svg path {
+	fill: blue !important;
+}
+svg:hover path {
+	fill: yellow !important;
+}

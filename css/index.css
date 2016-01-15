@@ -1,10 +1,9 @@
 /** 
 	NEEDS FIXING:
 		ActionBox
-		IE 
+		IE
 		style-guide
 		Open Sans font?
-		Rearrangement
 		Going over all requirements
 **/
 /***********************************/
@@ -52,15 +51,27 @@
   padding: 0;
   visibility: hidden; }
 
-.u-graphicalLink, .ArrowToTop {
+.u-graphicalLink, .HeaderButton--hamburger, .HeaderButton--search, .ArrowToTop {
   font-size: 0; }
 
-a.u-cleanLinks, a.ResponsiveNav, a.CalendarColumn-topicLink, a.Footer-links,
+a.u-cleanLinks, a.ButtonLink, a.ResponsiveNav, a.CalendarColumn-topicLink, a.BlogPost--bright, a.Footer-links, a.BlogPost--dark,
 .u-cleanLinks a,
+.ButtonLink a,
 .ResponsiveNav a,
 .CalendarColumn-topicLink a,
-.Footer-links a {
+.BlogPost--bright a,
+.Footer-links a,
+.BlogPost--dark a {
   text-decoration: none; }
+  a.u-cleanLinks:hover, a.ButtonLink:hover, a.ResponsiveNav:hover, a.CalendarColumn-topicLink:hover, a.BlogPost--bright:hover, a.Footer-links:hover, a.BlogPost--dark:hover,
+  .u-cleanLinks a:hover,
+  .ButtonLink a:hover,
+  .ResponsiveNav a:hover,
+  .CalendarColumn-topicLink a:hover,
+  .BlogPost--bright a:hover,
+  .Footer-links a:hover,
+  .BlogPost--dark a:hover {
+    text-decoration: none; }
 
 @media (max-width: 699px) {
   .u-screenLarge {
@@ -77,13 +88,8 @@ a.u-cleanLinks, a.ResponsiveNav, a.CalendarColumn-topicLink, a.Footer-links,
     .u-mobileFlip {
       flex-direction: column; } }
 
-@keyframes raise {
-  0% {
-    top: 0; }
-  100% {
-    top: -15rem; } }
 html {
-  font-size: 100%; }
+  font-size: 100% !important; }
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -122,7 +128,10 @@ section {
   border-radius: 5px;
   font-size: .9rem;
   text-decoration: none;
-  background: linear-gradient(to top, #1188C4, #1D8EC6, #2B94C9); }
+  background: linear-gradient(to top, #1188C4, #1D8EC6, #2B94C9);
+  color: white; }
+  .ButtonLink:hover {
+    color: white; }
   .ButtonLink::after {
     content: "\25BA";
     display: inline-block;
@@ -159,10 +168,12 @@ header .Section-content > div, nav {
   border: 1.5px solid #E0E0E0;
   display: inline-block;
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
   border-radius: 15%;
   outline: none; }
+
+header .HeaderButton--hamburger, header .HeaderButton--search {
+  margin-top: 1rem;
+  margin-bottom: 2rem; }
 
 .HeaderButton--hamburger::after {
   content: url("../img/hamburger-icon.png"); }
@@ -248,7 +259,7 @@ div.u-floatUnderHeader {
     font-size: 0.8rem;
     text-transform: uppercase; }
     .ResponsiveNav ul li a {
-      color: black; }
+      color: #565656; }
     .ResponsiveNav ul li:last-child {
       font-weight: bold;
       text-align: center; }
@@ -630,33 +641,28 @@ i.promotion-arrow::after {
   .CalendarColumn-topicLink:hover {
     color: black; }
 
-.BlogPost--light {
+.BlogPost--bright {
   padding: .5rem;
   margin-bottom: .5rem;
   display: flex;
   background-color: rgba(255, 255, 255, 0.5); }
-  .BlogPost--light .u-cleafix {
-    margin-top: .5rem; }
-  .BlogPost--light p {
+  .BlogPost--bright p {
     padding: 0 .5rem;
     margin: 0;
     font-size: 1rem;
     text-shadow: 0 0 0px black;
     color: black; }
     @media (min-width: 700px) {
-      .BlogPost--light p {
+      .BlogPost--bright p {
         font-size: .8rem; } }
-  .BlogPost--light img {
-    border-radius: 3px;
-    box-shadow: 0 2px 12px gray; }
-  .BlogPost--light:hover {
+  .BlogPost--bright:hover {
     background-color: rgba(255, 255, 255, 0.7); }
 
 .Date--bright {
+  display: inline-block;
   background-color: #3399CC;
   color: white;
-  text-align: center;
-  height: 5.5em; }
+  text-align: center; }
   .Date--bright span {
     display: block;
     padding: .3em; }
@@ -678,6 +684,9 @@ i.promotion-arrow::after {
   .Section--success .SuccessColumn, .Section--success .SuccessColumn--narrow {
     width: 100%;
     float: left; }
+    .Section--success .SuccessColumn .SuccessQuote, .Section--success .SuccessColumn--narrow .SuccessQuote {
+      width: 100%;
+      box-sizing: border-box; }
     @media (min-width: 700px) {
       .Section--success .SuccessColumn, .Section--success .SuccessColumn--narrow {
         width: 37.5%; } }
@@ -689,37 +698,39 @@ i.promotion-arrow::after {
  Two SuccessBox types are: SuccessIcon and SuccessQuote.
 */
 .SuccessQuote, .SuccessIcon {
+  display: block;
   padding: 0.2rem;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: #3399CC;
+  background-clip: content-box; }
   .SuccessQuote .SuccessBox-layerTop, .SuccessIcon .SuccessBox-layerTop {
+    padding: 0.5rem;
+    box-sizing: border-box;
     position: relative;
     z-index: 1;
     overflow: hidden;
-    background-color: white; }
+    background-color: white;
+    transition: transform 2s ease-out; }
   .SuccessQuote .SuccessBox-layerBottom, .SuccessIcon .SuccessBox-layerBottom {
+    padding: 0.5rem;
     box-sizing: border-box;
-    position: absolute;
-    top: 0.2rem;
-    bottom: 0.2rem;
-    left: 0.2rem;
-    right: 0.2rem;
     z-index: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
     .SuccessQuote .SuccessBox-layerBottom a, .SuccessIcon .SuccessBox-layerBottom a {
       display: block;
       height: 100%; }
-  .SuccessQuote .SuccessBox-layerTop > div, .SuccessIcon .SuccessBox-layerTop > div, .SuccessQuote .SuccessBox-layerBottom div, .SuccessIcon .SuccessBox-layerBottom div {
-    padding: 0.5rem;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box; }
 
 .SuccessQuote:hover .SuccessBox-layerTop, .SuccessIcon:hover .SuccessBox-layerTop {
-  animation: raise 2s;
-  animation-fill-mode: forwards; }
+  transform: translateY(-150%); }
 
 .SuccessQuote {
+  width: 20rem;
   color: #565656; }
   .SuccessQuote img {
     width: 100%; }
@@ -728,6 +739,8 @@ i.promotion-arrow::after {
     border-color: #E2E2E2;
     /* gray */
     border-bottom: none; }
+  .SuccessQuote .SuccessBox-layerBottom {
+    color: white; }
   .SuccessQuote .SuccessBox-layerTop q::before {
     content: url("../img/quote-grey.png");
     margin-right: .3rem; }
@@ -737,21 +750,19 @@ i.promotion-arrow::after {
     text-align: right; }
   .SuccessQuote .SuccessBox-layerBottom q::before {
     content: ''; }
-  .SuccessQuote .SuccessBox-layerBottom div {
-    background-color: #3399CC;
-    color: white; }
 
 .SuccessRow .SuccessIcon {
   width: 33.3%;
   float: left; }
 
 .SuccessIcon {
-  box-sizing: border-box; }
-  .SuccessIcon .SuccessBox-layerBottom div {
+  box-sizing: border-box;
+  width: 6rem; }
+  .SuccessIcon .SuccessBox-layerBottom {
     background-image: url("../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: #3399CC; }
+    background-clip: content-box; }
   .SuccessIcon img {
     width: 100%; }
 
@@ -865,12 +876,13 @@ footer {
   padding: 0 .2rem;
   box-sizing: border-box; }
   .BlogWindow hr, .BlogWindow .SignUpBar {
-    margin: 0.7rem; }
+    margin: 0 0.7rem; }
   .BlogWindow hr {
     border-color: #646464;
     border-style: solid; }
   .BlogWindow .SignUpBar {
-    margin-bottom: 3rem; }
+    width: auto;
+    margin-bottom: 2rem; }
   .BlogWindow h3 {
     color: #4DA6D2;
     font-weight: bold;
@@ -879,36 +891,43 @@ footer {
     text-transform: uppercase;
     margin-top: 1rem; }
 
-.SignUpBar input, .SignUpBar button {
-  float: left;
-  margin: 0;
-  border: none; }
-.SignUpBar input {
-  width: 70%;
-  box-sizing: border-box;
-  padding: 0 .5rem;
-  line-height: 1.5rem;
-  height: 1.5rem;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px; }
-.SignUpBar button {
-  width: 30%;
-  box-sizing: border-box;
-  height: 1.5rem;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  background: linear-gradient(to top, #1188C4, #1D8EC6, #2B94C9);
-  font-size: 0.6rem;
-  color: white;
-  text-transform: uppercase; }
+.SignUpBar {
+  display: inline-block;
+  width: 12rem; }
+  .SignUpBar input, .SignUpBar button {
+    float: left;
+    margin: 0;
+    border: none; }
+  .SignUpBar input {
+    width: 70%;
+    box-sizing: border-box;
+    padding: 0 .5rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px; }
+  .SignUpBar button {
+    width: 30%;
+    box-sizing: border-box;
+    height: 1.5rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: linear-gradient(to top, #1188C4, #1D8EC6, #2B94C9);
+    font-size: 0.6rem;
+    color: white;
+    text-transform: uppercase; }
 
 .BlogPost--dark {
+  display: block;
   color: white;
   font-size: .8rem; }
+  .BlogPost--dark:hover {
+    color: white; }
 
 .Date--dark {
   float: left;
-  padding: 0.3em; }
+  padding: 0.3em;
+  color: white; }
   .Date--dark span {
     text-align: center;
     display: block; }
@@ -924,9 +943,26 @@ footer {
     .IconGroup {
       display: block;
       margin: .7rem; } }
-  .IconGroup img {
+  .IconGroup a {
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
     margin: 0 .3rem;
-    vertical-align: middle; }
+    height: 20px;
+    width: auto; }
+    .IconGroup a img {
+      vertical-align: top; }
+    .IconGroup a .u-hoverShow {
+      position: absolute;
+      visibility: hidden;
+      top: 0;
+      left: 0; }
+    .IconGroup a .u-hoverHide {
+      visibility: visible; }
+    .IconGroup a:hover .u-hoverShow {
+      visibility: visible; }
+    .IconGroup a:hover .u-hoverHide {
+      visibility: hidden; }
 
 .ArrowToTop {
   display: block;

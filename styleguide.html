@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Styleguide for Comverse</title>
+
+	<link rel="stylesheet" href="./css/index.css">
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/2f761d4/dist/bootstrap-toc.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Exo:400,900' rel='stylesheet' type='text/css'>
+	
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/2f761d4/dist/bootstrap-toc.min.js"></script>
+
+
+	<style>
+		body {
+			color: black;
+		}
+		pre {
+			margin-top: 1rem;
+		}
+		.DarkWrapper {
+			background-color: #444444;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid gray;
+		}
+		.u-marginTop {
+			margin-top: 6rem;
+		}
+		h1 {
+			font-family: 'Exo', sans-serif;
+			font-weight: bold;
+		}
+		h2 {
+			text-align: left;
+			text-transform: none;
+			font-weight: bold;
+		}
+	</style>
+
+
+</head>
+<body data-spy="scroll" data-target="#toc">
+  <div class="container">
+    <div class="row">
+      <!-- sidebar, which will move to the top on a small screen -->
+      
+      <div class="col-sm-3">
+        <nav id="toc" data-spy="affix" data-toggle="toc"></nav>
+      </div>
+      
+      <!-- main content area -->
+      <div class="col-sm-9">
+        <h1>Styleguide for Comverse Project</h1>
+        <p>The Comverse website has a few components that can be reused. These components are listed in this page. Each component has an example of HTML code and live example. </p>
+        <p>The classes all follow the SUIT CSS naming conventions, except that elements that belong to a Class--modified do not also belong to Class.</p>
+
+
+        <h2>Buttons</h2>
+        
+
+        <h3>Button Links</h3>
+        <p>This button would typically appear at the end of a section, and lead to a different page with more information about the same topic.</p>
+   
+		<div class="DarkWrapper">
+        	<a href="#" class="ButtonLink">Text inside link</a>
+        </div>
+
+        <pre class="prettyprint lang-html">
+        <a href="#" class="ButtonLink">Text inside link</a></pre>
+        	
+        <h3>Header Buttons</h3>
+        <p>This button would typically appear in a small screen device, in the page's header. The button has an icon inside it. Two different options are a hamburger icon, and a search icon, as shown below. More options can be configured by extending the SASS class %HeaderButton.</p>
+
+		<div class="DarkWrapper">
+	        <button class="HeaderButton--hamburger">Navigation</button>
+	        <button class="HeaderButton--search">Navigation</button>
+	    </div>
+
+		<pre class="prettyprint lang-html">
+			<button class="HeaderButton--hamburger">Navigation</button>
+			<button class="HeaderButton--search">Navigation</button></pre>
+        <p>The buttons may also be wrapped with an anchor element to create links to other parts of the page.</p>
+		
+		
+		
+		<h2>Blog Elements</h2>
+
+		<h3>Blog Post</h3>
+		<p>This is a component showing part of a blog post. It is small, an typically links to the full post.</p>
+		<p>The component has to different styles, one for a bright background, and the other for a dark background.</p>
+		<div class="DarkWrapper">
+			<a href="#" class="BlogPost--dark">
+				<div class="Date--dark"> 
+					<span>18</span>
+					<span>July</span>
+				</div>
+				<p>Comverse regains lead in congergent charging market regains lead in</p>
+			</a>
+			<a href="#" class="BlogPost--bright u-marginTop">
+				<div class="Date--bright"> 
+					<span>18</span>
+					<span>July</span>
+				</div>
+				<p>Comverse regains lead in congergent charging market regains lead in</p>
+			</a>
+		</div>
+		
+		<pre class="prettyprint">
+			<a href="#" class="BlogPost--dark">
+				<div class="Date--dark"> 
+					<span>18</span>
+					<span>July</span>
+				</div>
+				<p>Comverse regains lead in congergent charging market regains lead in</p>
+			</a>
+
+			<a href="#" class="BlogPost--bright">
+				<div class="Date--bright"> 
+					<span>18</span>
+					<span>July</span>
+				</div>
+				<p>Comverse regains lead in congergent charging market regains lead in</p>
+			</a></pre>
+
+		<h3>Date</h3>
+		<p>An element showing a certain date - day and month.</p>
+		<p>The component has to different styles, one for a bright background, and the other for a dark background.</p>
+
+		<div class="DarkWrapper">
+			<div class="Date--dark"> 
+				<span>18</span>
+				<span>July</span>
+			</div>
+			<div class="Date--bright"> 
+				<span>18</span>
+				<span>July</span>
+			</div>
+		</div>
+
+		<pre class="prettyprint">
+			<div class="Date--dark"> 
+				<span>18</span>
+				<span>July</span>
+			</div>
+			<div class="Date--bright"> 
+				<span>18</span>
+				<span>July</span>
+			</div></pre>
+
+
+
+		<h2>Success Story Boxes</h2>
+		<p>These two components resemble different success stories. They are links, leading to the full story. Both of them have a beautiful hover state.</p>
+
+
+		<h3>Success Story Icon</h3>
+		
+		<div class="DarkWrapper">
+			<a href="#" class="SuccessIcon">
+				<div class="SuccessBox-layerTop">
+					<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="Kyivstar Icon" />
+				</div>
+				<div class="SuccessBox-layerBottom"></div>							
+			</a>
+		</div>
+
+		<pre class="prettyprint">
+			<a href="#" class="SuccessIcon">
+				<div class="SuccessBox-layerTop">
+					<img class="u-grayscale" src="./img/Kyivstarw_w108px_X_h95.jpg" alt="Kyivstar Icon" />
+				</div>
+				<div class="SuccessBox-layerBottom"></div>							
+			</a></pre>		
+
+		<h3>Success Story Quote</h3>
+		
+		<div class="DarkWrapper">
+			<a href="#" class="SuccessQuote">
+				<div class="SuccessBox-layerTop">
+					<div class="SuccessQuote-top">
+						<img src="./img/CB-JP-face.png" alt="Jonathan Pierce">
+						<q>We have very good and very warm relations with Comverse. We always achieve great work with them and appreciate working with them them and other nice compliments as such.</q>
+					</div>
+					<hr />
+					<div class="SuccessQuote-bottom u-clearfix">
+						<div class="SuccessQuote-quoteeInfo">
+							<p>Sergey Korotych</p>
+							<p>Deputy CTO, 3 Mob Ukraine</p>	
+						</div>
+						<img class="u-grayscale" src="./img/3mob_w108px_X_h95px.jpg" alt="3 Mob Icon">
+					</div>
+				</div>
+				<div class="SuccessBox-layerBottom">
+					<q>We have very good and very warm relations with Comverse. We always achieve great work with them and appreciate working with them and other nice compliments as such.</q>
+				</div>
+			</a>
+		</div>
+
+		<pre class="prettyprint">
+			<a href="#" class="SuccessQuote">
+				<div class="SuccessBox-layerTop">
+					<div class="SuccessQuote-top">
+						<img src="./img/CB-JP-face.png" alt="Jonathan Pierce">
+						<q>We have very good and very warm relations with Comverse. We always achieve great work with them and appreciate working with them them and other nice compliments as such.</q>
+					</div>
+					<hr />
+					<div class="SuccessQuote-bottom u-clearfix">
+						<div class="SuccessQuote-quoteeInfo">
+							<p>Sergey Korotych</p>
+							<p>Deputy CTO, 3 Mob Ukraine</p>	
+						</div>
+						<img class="u-grayscale" src="./img/3mob_w108px_X_h95px.jpg" alt="3 Mob Icon">
+					</div>
+				</div>
+				<div class="SuccessBox-layerBottom">
+					<q>We have very good and very warm relations with Comverse. We always achieve great work with them and appreciate working with them and other nice compliments as such.</q>
+				</div>
+			</a></pre>
+
+		
+		<h2>Input Elements</h2>
+
+		<h3>Input With Button</h3>
+		<p>This could be used, for example, for search or a subscribe input.</p>
+		
+		<div class="DarkWrapper">
+			<div id="subscribe-form" class="SignUpBar">
+				<label for="input-email-sign-up" class="u-invisolabel">Email:</label>
+				<input id="input-email-sign-up"></input>
+				<button>Sign Up</button>	
+			</div>
+		</div>
+
+		<pre class="prettyprint">
+			<div id="subscribe-form" class="SignUpBar">
+				<label for="input-email-sign-up" class="u-invisolabel">Email:</label>
+				<input id="input-email-sign-up"></input>
+				<button>Sign Up</button>	
+			</div></pre>
+
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+	var codeElements = document.getElementsByClassName('prettyprint');
+	[].forEach.call(codeElements, function (codeElement) {
+		var code = codeElement.innerHTML;
+		code = code
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/\n/g, '&#xA;')
+			.replace(/\t\t\t/g, '\t');
+		codeElement.innerHTML = code;
+	});
+</script>
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+</body>
+</html>

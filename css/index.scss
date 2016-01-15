@@ -1,10 +1,9 @@
 /** 
 	NEEDS FIXING:
 		ActionBox
-		IE 
+		IE
 		style-guide
 		Open Sans font?
-		Rearrangement
 		Going over all requirements
 **/
 
@@ -89,6 +88,10 @@ $c-bg-buttonlink-gradient: linear-gradient(to top, $c-bg-buttonlink-bottom, $c-b
 a.u-cleanLinks,
 .u-cleanLinks a {
 	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;		
+	}
 }
 
 .u-screenLarge {
@@ -112,15 +115,10 @@ a.u-cleanLinks,
 }
 
 
-@keyframes raise {
-	0% { top: 0; }
-	100% { top: -15rem; }
-}
-
 // Default behavior
 
 html {
-	font-size: 100%;
+	font-size: 100% !important;
 }
 
 body {
@@ -162,6 +160,8 @@ section {
 $u-divider: '../img/divider.png';
 
 .ButtonLink {
+	@extend .u-cleanLinks;
+
 	display: block;
 	max-width: 12em;
 	margin-top: 15px;
@@ -172,6 +172,11 @@ $u-divider: '../img/divider.png';
 	font-size: .9rem;
 	text-decoration: none;
 	background: $c-bg-buttonlink-gradient;
+	color: white;
+
+	&:hover {
+		color: white;
+	}
 
 	&::after {
 	 	content: "\25BA";
@@ -242,6 +247,8 @@ header .Section-content > div, nav {
 
 
 %HeaderButton {
+	@extend .u-graphicalLink;
+
 	width: 20px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -251,10 +258,13 @@ header .Section-content > div, nav {
 	border: 1.5px solid $c-mobilebutton-gray-bottom;
 	display: inline-block;
 	text-align: center;
-	margin-top: 1rem;
-	margin-bottom: 2rem;
 	border-radius: 15%;	
 	outline: none;
+}
+
+header %HeaderButton {
+	margin-top: 1rem;
+	margin-bottom: 2rem;
 }
 
 .HeaderButton--hamburger {
@@ -373,7 +383,7 @@ div.u-floatUnderHeader {
 		text-align: left;
 		font-size: 0.8rem;
 		text-transform: uppercase;
-		a { color: black; }
+		a { color: $c-font-gray; }
 
 		&:last-child {
 			a { color: red; }
@@ -862,6 +872,7 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 	}
 }
 
+
 .WeDoIcon > img {
 	width: 100%;
 	margin-bottom: 1rem;
@@ -873,6 +884,7 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 		display: block;
 	}
 }
+
 .WeDoIcon:hover > img {
 	&.WeDoIcon-inside {
 		display: block;
@@ -963,15 +975,13 @@ $o-calendarcontent-hover: 0.7;
 
 
 
-.BlogPost--light {
+.BlogPost--bright {
+	@extend .u-cleanLinks;
+
 	padding: .5rem;
 	margin-bottom: .5rem;
 	display: flex;
 	background-color: rgba(white, $o-calendarcontent);
-
-	.u-cleafix {
-		margin-top: .5rem;
-	}
 
 	p {
 		padding: 0 .5rem;
@@ -985,21 +995,16 @@ $o-calendarcontent-hover: 0.7;
 		}
 	}
 
-	img {
-		border-radius: 3px;
-		box-shadow: 0 2px 12px gray;
-	}
-
 	&:hover {
 		background-color: rgba(white, $o-calendarcontent-hover);	
 	}
 }
 
 .Date--bright {
+	display: inline-block;
 	background-color: $c-date-blue;
 	color: white;
 	text-align: center;
-	height: 5.5em;
 
 	span {
 		display: block;
@@ -1063,6 +1068,11 @@ $u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
 	.SuccessColumn {
 		width: 100%;
 		float: left;
+		
+		.SuccessQuote {
+			width: 100%;
+			box-sizing: border-box;
+		}
 
 		@media(min-width: $w-screen-large) {
 			width: 37.5%;
@@ -1079,48 +1089,50 @@ $u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
  Two SuccessBox types are: SuccessIcon and SuccessQuote.
 */
 %SuccessBox {	
+	display: block;
 	padding: $p-success-between-boxes;
 	position: relative;
 	overflow: hidden;
+	background-color: $c-bg-success-box;
+	background-clip: content-box;
 
 	.SuccessBox-layerTop {
+		padding: $p-success-inside-box;
+		box-sizing: border-box;
+
 		position: relative;
+		
 		z-index: 1;
 		overflow: hidden;
 		background-color: white;
+
+		transition: transform 2s ease-out;
 	}
 	.SuccessBox-layerBottom {
+		padding: $p-success-inside-box;
 		box-sizing: border-box;
-		position: absolute;
-		top: $p-success-between-boxes;
-		bottom: $p-success-between-boxes;
-		left: $p-success-between-boxes;
-		right: $p-success-between-boxes;
 		z-index: 0;
 		overflow: hidden;
+		
+
+		position: absolute;
+		top: 0; bottom: 0; left: 0; right: 0;
 
 		a {
 			display: block;
 			height: 100%;
 		}
-
-	}
-	.SuccessBox-layerTop > div, .SuccessBox-layerBottom div {
-		padding: $p-success-inside-box;
-		width: 100%;
-		height: 100%;
-		box-sizing: border-box;
 	}
 }
 %SuccessBox:hover .SuccessBox-layerTop {
-	animation: raise 2s;
-	animation-fill-mode: forwards;
+	transform: translateY(-150%);
 }
 
 
 .SuccessQuote {
 	@extend %SuccessBox;
 
+	width: 20rem;
 	color: $c-font-gray;
 
 	img {
@@ -1132,7 +1144,10 @@ $u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
 		border-color: #E2E2E2; /* gray */
 		border-bottom: none;
 	}
-
+	
+	.SuccessBox-layerBottom {
+		color: white;
+	}
 	.SuccessBox-layerTop q::before {
 		content: url('../img/quote-grey.png');
 		margin-right: .3rem;
@@ -1144,11 +1159,6 @@ $u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
 	}
 	.SuccessBox-layerBottom q::before { 
 		content: '';
-	}
-
-	.SuccessBox-layerBottom div {
-		background-color: $c-bg-success-box;
-		color: white;
 	}
 }
 
@@ -1165,12 +1175,13 @@ $u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
 	@extend %SuccessBox;
 
 	box-sizing: border-box;
+	width: 6rem;
 
-	.SuccessBox-layerBottom div {
+	.SuccessBox-layerBottom {
 		background-image: url($u-bg-icon-success);
 		background-position: center center;
 		background-repeat: no-repeat;
-		background-color: $c-bg-success-box;
+		background-clip: content-box;
 	}
 
 	img {
@@ -1380,7 +1391,7 @@ footer {
 	box-sizing: border-box;
 
 	hr, .SignUpBar {
-		margin: 0.7rem;
+		margin: 0 0.7rem;
 	}
 
 	hr {
@@ -1389,7 +1400,8 @@ footer {
 	}
 
 	.SignUpBar {
-		margin-bottom: 3rem;
+		width: auto;
+		margin-bottom: 2rem;
 	}
 
 	h3 {
@@ -1404,6 +1416,9 @@ footer {
 
 
 .SignUpBar {
+	
+	display: inline-block;
+	width: 12rem;
 
 	input, button {
 		float: left;
@@ -1435,13 +1450,21 @@ footer {
 }
 
 .BlogPost--dark {
+	@extend .u-cleanLinks;
+
+	display: block;
 	color: white;
 	font-size: .8rem;
+
+	&:hover {
+		color: white;
+	}
 }
 
 .Date--dark {
 	float: left;
 	padding: 0.3em;
+	color: white;
 	
 	span {
 		text-align: center;
@@ -1464,10 +1487,32 @@ footer {
 		margin: .7rem;
 	}
 
-	img {
-		margin: 0 .3rem;
+	a {
 		vertical-align: middle;
+		display: inline-block;
+		position: relative;
+		margin: 0 .3rem;
+		height: 20px;
+		width: auto;
+
+		img {
+			vertical-align: top;
+		}
+
+		.u-hoverShow {
+			position: absolute;
+			visibility: hidden;
+			top: 0;
+			left: 0;
+		}
+		.u-hoverHide { visibility: visible; }
+		
+		&:hover {
+			.u-hoverShow { visibility: visible; }
+			.u-hoverHide { visibility: hidden; }
+		}
 	}
+
 }
 
 // Mobile footer:
