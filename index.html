@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="IE=9"> <!-- IE10 render like IE9 -->
 	<title>Comverse</title>
 	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
 	<link href="css/index.css" rel='stylesheet' type='text/css' />
@@ -64,59 +63,70 @@
 		</div>
 	</header>
 	<main class="Section--main">
-		<div class="Section-content">
-			<div class="Section-top">
-				<ul class="Carousel">
-					<li class="Carousel-window">
+		
+		<fieldset class="CarouselNavigator">
+			<legend class="u-invisolabel">Choose page:</legend>
+			<div class="Section-content">
+				<input type="radio" id="nav-radio-1" name="nav-radios" value="1"
+					checked="checked"></radio>
+				<label for="nav-radio-1">1</label>
+				<input type="radio" id="nav-radio-2" name="nav-radios" value="2"></radio>
+				<label for="nav-radio-2">2</label>
+
+				<input type="radio" id="nav-radio-3" name="nav-radios" value="3"></radio>
+				<label for="nav-radio-3">3</label>
+
+				<input type="radio" id="nav-radio-4" name="nav-radios" value="4"></radio>
+				<label for="nav-radio-4">4</label>
+			</div>
+		</fieldset>
+
+		<ul class="Carousel">
+			<li class="Carousel-slide--ferriswheel">
+				<div class="Section-content">
+					<div class="Section-top">
 						<h2><span class="u-bold">Free</span> Your Marketplace From IT <span class="u-bold">Complexity</span></h2>
 						<h3>Comverse Policy Studio</h3>
 						<h3><span class="u-bold">1st</span> Ever Marketing-Oriented Policy Tool</h3>
-						<a href="#" class="ButtonLink u-uppercase">Learn More</a>
-					</li>
-				</ul>
-				<fieldset class="CarouselNavigator">
-					<legend class="u-invisolabel">Choose page:</legend>
-					<input type="radio" id="nav-radio-1" name="nav-radios" value="1"
-						checked="checked"></radio>
-					<label for="nav-radio-1">1</label>
+					</div>
 
-					<input type="radio" id="nav-radio-2" name="nav-radios" value="2"></radio>
-					<label for="nav-radio-2">2</label>
+					<a href="#" class="ButtonLink u-uppercase">Learn More</a>
 
-					<input type="radio" id="nav-radio-3" name="nav-radios" value="3"></radio>
-					<label for="nav-radio-3">3</label>
+					<div class="u-clearfix u-center u-cleanLinks">
+						<a class="TopicRect--pink" href="#">
+							<h3>Comverse Is Value-Added Service Global Market Leader.</h3>
+							<i class="u-screenSmall promotion-arrow"></i>
+							<span>
+								<i class="fa fa-link"></i>
+								Read More
+							</span>
+						</a>
+						<a class="TopicRect--green" href="#">
+							<h3>Managed Services World Congress September 18-19 Berlin, Germany</h3>
+							<i class="u-screenSmall promotion-arrow"></i>
+							<span>
+								<i class="fa fa-file-text-o"></i>
+								Read More
+							</span>
+						</a>
+						<a class="TopicRect--orange" href="#">
+							<h3>Comverse: Enabling a world of Connected Possibilities</h3>
+							<i class="u-screenSmall promotion-arrow"></i>
+							<span>
+								<i class="fa fa-play-circle-o"></i>
+								Watch Now
+							</span>
+						</a>
+					</div>
+				</div>
+				
+			</li>
 
-					<input type="radio" id="nav-radio-4" name="nav-radios" value="4"></radio>
-					<label for="nav-radio-4">4</label>
-				</fieldset>
-			</div>
-			<div class="u-clearfix u-center u-cleanLinks">
-				<a class="TopicRect--pink" href="#">
-					<h3>Comverse Is Value-Added Service Global Market Leader.</h3>
-					<i class="u-screenSmall promotion-arrow"></i>
-					<span>
-						<i class="fa fa-link"></i>
-						Read More
-					</span>
-				</a>
-				<a class="TopicRect--green" href="#">
-					<h3>Managed Services World Congress September 18-19 Berlin, Germany</h3>
-					<i class="u-screenSmall promotion-arrow"></i>
-					<span>
-						<i class="fa fa-file-text-o"></i>
-						Read More
-					</span>
-				</a>
-				<a class="TopicRect--orange" href="#">
-					<h3>Comverse: Enabling a world of Connected Possibilities</h3>
-					<i class="u-screenSmall promotion-arrow"></i>
-					<span>
-						<i class="fa fa-play-circle-o"></i>
-						Watch Now
-					</span>
-				</a>
-			</div>
-		</div>
+			<!--
+				Another Carousel-slide
+			-->
+		</ul>
+
 	</main>
 	<section class="Section--weDo">
 		<div class="Section-content">
@@ -183,13 +193,13 @@
 						</div>
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</a>
-					<a class="CalendarColumn-topicLink u-screenLarge" href="#">
+					<a class="CalendarColumn-topicLink" href="#">
 						<i class="fa fa-calendar"></i>
 						All Events
 					</a>
 				</div>
 				<div class="CalendarColumn">
-					<h3 class="u-screenLarge">Events</h3>
+					<h3>Blog</h3>
 					<a href="#" class="BlogPost--bright u-clearfix">
 						<div class="Date--bright">
 							<span>12</span>
@@ -198,12 +208,11 @@
 						<p>Comverse regains lead in congergent charging market regains lead in</p>
 					</a>
 					<a class="CalendarColumn-topicLink" href="#">
-						<i class="fa fa-calendar"></i>
-						All Events
+						<i class="fa fa-comment"></i>
+						Full Blog
 					</a>
 				</div>
 			</div>
-			<!-- <h3>What's going on</h3> -->
 		</div>
 
 	</section>
