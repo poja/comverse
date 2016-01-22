@@ -1,10 +1,7 @@
 /** 
 	NEEDS FIXING:
-		ActionBox
-		IE
-		style-guide
-		Open Sans font?
 		Going over all requirements
+		Fix Under-header stuff to be with checkboxes
 **/
 
 
@@ -110,7 +107,7 @@ a.u-cleanLinks,
 	flex-direction: column-reverse;
 
 	@media(min-width: $w-screen-large) {
-		flex-direction: column;
+		display: block;
 	}
 }
 
@@ -255,9 +252,10 @@ header > .Section-content {
 
 header h1 {
 	width: 130px;
-	padding: .5rem 0;
+	padding: .5rem .3rem;
 	margin: 0;
 	display: inline-block;
+    box-sizing: border-box;
 
 	img {
 		width: 100%;
@@ -317,9 +315,9 @@ header .HeaderButton--search {
 div.u-floatUnderHeader {
 	position: absolute;
 	z-index: 1;
-	padding-top: $h-header-mobile + $p-bottom-header-mobile;
+	top: $h-header-mobile + $p-bottom-header-mobile;
 	width: 100%;
-	top: 0; left: 0;
+	left: 0;
 
 	@media(min-width: $w-screen-large) {
 		position: static;
@@ -615,15 +613,19 @@ $c-button-bright: #E5E5E5;	/* almost white */
 	display: block;
 	padding: 0;
 	margin: 0;
+}
 
-	li {
-		display: block;
-		list-style: none;
-	}
+.Carousel-slide {
+	display: block;
+	list-style: none;
+	transition: transform 2s ease;
+	position: relative;
+	z-index: -1;
 }
 
 
 .Carousel-slide--ferriswheel {
+	@extend .Carousel-slide;
 
 	padding-bottom: .1 * $p-section-content;
 	background: url($u-bg-main-mobile) center center;
@@ -679,6 +681,8 @@ $c-button-bright: #E5E5E5;	/* almost white */
 
 	width: 100%;
 	margin-bottom: 2rem;
+	margin-left: 0;
+	margin-right: 0;
 	border: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -693,6 +697,7 @@ $c-button-bright: #E5E5E5;	/* almost white */
 
 	.Section-content {
 		padding-left: $p-section-content;
+		box-sizing: border-box;
 	}
 
 	@media(min-width: $w-screen-large) {
@@ -876,9 +881,10 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 	margin: 30px auto 20px auto;
 }
 
-.Section--weDo > .Section-content > .u-clearfix {
+.Section--weDo  ul.u-clearfix {
 	font-size: 0;	/* inline-block space fix */
 	padding: 0;
+	margin-top: 3rem;
 }
 
 .WeDoIcon {
@@ -889,7 +895,12 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
     vertical-align: top;
     font-size: 1rem;
 
-    label {
+	figure {
+		width: 100%;
+		margin: 0;	
+	}
+
+    figcaption {
     	display: block;
 		color: white;
 		text-align: center;
@@ -902,7 +913,7 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 }
 
 
-.WeDoIcon > img {
+.WeDoIcon img {
 	width: 100%;
 	margin-bottom: 1rem;
 
@@ -914,7 +925,7 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 	}
 }
 
-.WeDoIcon:hover > img {
+.WeDoIcon:hover img {
 	&.WeDoIcon-inside {
 		display: block;
 	}
@@ -1075,6 +1086,8 @@ $o-calendarcontent-hover: 0.7;
 $p-success-between-boxes: .2rem;
 $p-success-inside-box: .5rem;
 
+$w-success-column-max: 450px;
+
 $c-bg-success-gray: #E0E0E0;
 
 $c-bg-success-box: $c-date-blue;
@@ -1109,6 +1122,16 @@ $u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
 	}
 }
 
+.SuccessGrid {
+	@extend .u-clearfix;
+
+	margin: 0 auto;
+	max-width: $w-success-column-max;
+
+	@media(min-width: $w-screen-large) {
+		max-width: 3 * $w-screen-large;
+	}
+}
 
 /**
  SuccessBox has two layers, one of witch rises on hover.
@@ -1132,7 +1155,7 @@ $u-bg-icon-success: '../img/logos_generic_2nd_side_cut_02_w108px_x_h95px.jpg';
 		overflow: hidden;
 		background-color: white;
 
-		transition: transform 2s ease-out;
+		transition: transform 1.3s ease-out;
 	}
 	.SuccessBox-layerBottom {
 		padding: $p-success-inside-box;
@@ -1346,9 +1369,16 @@ footer {
 	small {
 		display: block;
 		background-color: white;
+		text-align: center;
+		padding: .3rem 0rem;
 
 		&, a {
-			color: $c-font-gray;
+			color: black;
+		}
+		a {
+			border-left: 1px solid $c-font-gray;
+			padding-left: .4rem;
+			margin-left: .1rem;
 		}
 	}
 
@@ -1356,7 +1386,10 @@ footer {
 		background: url($u-bg-footer);
 
 		small {
+			text-align: left;
 			background-color: transparent;
+
+			&, a { color: $c-font-gray; }
 		}
 	}
 }
@@ -1548,6 +1581,7 @@ footer {
 
 	display: block;
 	width: $w-arrow-up-mobile;
+	max-width: 90px;
 	height: $h-footer-row-mobile * .85;
 	position: relative;
 	left: $pos-left-arrow-up;

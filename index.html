@@ -47,7 +47,7 @@
 				</div>
 
 			</div>
-			<div class="MobileSearch u-floatUnderHeader u-screenSmall">
+			<div class="MobileSearch u-floatUnderHeader u-screenSmall" id="mobile-search-bar">
 				<div>
 					<label for="input-search-mobile" class="u-invisolabel">Search query:</label>
 					<input id="input-search-mobile" type="text"></input>
@@ -57,7 +57,7 @@
 					</a> <!-- x button to close search -->
 				</div>
 			</div>
-			<a href="#search-mobile" class="u-screenSmall">
+			<a href="#mobile-search-bar" class="u-screenSmall">
 				<button class="HeaderButton--search">Open Search Bar</button>
 			</a>
 		</div>
@@ -133,34 +133,46 @@
 			<h2>What Can We Do For You?</h2>
 			<ul class="u-clearfix">
 				<li class="WeDoIcon">
-					<img src="./img/solution_icon_biz-analitics.svg" class="WeDoIcon-outside" alt="">
-					<img src="./img/solution_icon_biz-analitics_hover.svg" class="WeDoIcon-inside" alt="" />
-					<label>Data monetization</label>
+					<figure>
+						<img src="./img/solution_icon_biz-analitics.svg" class="WeDoIcon-outside" alt="">
+						<img src="./img/solution_icon_biz-analitics_hover.svg" class="WeDoIcon-inside" alt="" />
+						<figcaption>Data monetization</figcaption>	
+					</figure>				
 				</li>
 				<li class="WeDoIcon">
-					<img src="./img/solution_icon_diti-cx.svg" class="WeDoIcon-outside" alt="" />
-					<img src="./img/solution_icon_diti-cx_hover.svg" class="WeDoIcon-inside" alt="" />
-					<label>Machine to machine (M2M)</label>
+					<figure>
+						<img src="./img/solution_icon_diti-cx.svg" class="WeDoIcon-outside" alt="" />
+						<img src="./img/solution_icon_diti-cx_hover.svg" class="WeDoIcon-inside" alt="" />
+						<figcaption>Machine to machine (M2M)</figcaption>
+					</figure>
 				</li>
 				<li class="WeDoIcon">
-					<img src="./img/solution_icon_optimize-efficnt.svg" class="WeDoIcon-outside" alt="" />
-					<img src="./img/solution_icon_optimize-efficnt_hover.svg" class="WeDoIcon-inside" alt="" />
-					<label>Over-the-top (OTT)</label>
+					<figure>
+						<img src="./img/solution_icon_optimize-efficnt.svg" class="WeDoIcon-outside" alt="" />
+						<img src="./img/solution_icon_optimize-efficnt_hover.svg" class="WeDoIcon-inside" alt="" />
+						<figcaption>Over-the-top (OTT)</figcaption>
+					</figure>
 				</li>
 				<li class="WeDoIcon">
-					<img src="./img/solution_icon_biz-transform.svg" class="WeDoIcon-outside" alt="" />
-					<img src="./img/solution_icon_biz-transform_hover.svg" class="WeDoIcon-inside" alt="" />
-					<label>Cloud computing</label>
+					<figure>
+						<img src="./img/solution_icon_biz-transform.svg" class="WeDoIcon-outside" alt="" />
+						<img src="./img/solution_icon_biz-transform_hover.svg" class="WeDoIcon-inside" alt="" />
+						<figcaption>Cloud computing</figcaption>
+					</figure>
 				</li>
 				<li class="WeDoIcon">
-					<img src="./img/solution_icon_personal.svg" class="WeDoIcon-outside" alt="" />
-					<img src="./img/solution_icon_personal_hover.svg" class="WeDoIcon-inside" alt="" />
-					<label>Managed Services</label>
+					<figure>
+						<img src="./img/solution_icon_personal.svg" class="WeDoIcon-outside" alt="" />
+						<img src="./img/solution_icon_personal_hover.svg" class="WeDoIcon-inside" alt="" />
+						<figcaption>Managed Services</figcaption>
+					</figure>
 				</li>
 				<li class="WeDoIcon">
-					<img src="./img/solution_icon_smart-money.svg" class="WeDoIcon-outside" alt="" />
-					<img src="./img/solution_icon_smart-money_hover.svg" class="WeDoIcon-inside" alt="" />
-					<label>Social Media</label>
+					<figure>
+						<img src="./img/solution_icon_smart-money.svg" class="WeDoIcon-outside" alt="" />
+						<img src="./img/solution_icon_smart-money_hover.svg" class="WeDoIcon-inside" alt="" />
+						<figcaption>Social Media</figcaption>
+					</figure>
 				</li>
 			</ul>
 			<a href="#" class="ButtonLink u-screenLarge">See all of our solutions</a>
@@ -219,7 +231,7 @@
 	<section class="Section--success">
 		<div class="Section-content">
 			<h2>Success Stories</h2>
-			<div class="u-clearfix">
+			<div class="SuccessGrid">
 				<div class="SuccessColumn">
 
 					<a href="#" class="SuccessQuote">
@@ -392,7 +404,8 @@
 					</div>
 				</div>
 				<small class="u-cleanLinks">
-					Copyright &copy; 2012 Comverse, Inc | <a href="#">Privacy Policy</a>
+					Copyright &copy; 2012 Comverse, Inc
+					<a href="#">Privacy Policy</a>
 				</small>
 			</div>
 			<div class="BlogWindow">
@@ -415,15 +428,15 @@
 				<div class="IconGroup">
 					<a href="http://youtube.com">
 						<img src="./img/socialMenuIcon-youtube.png" class="u-hoverHide" alt="Youtube Icon">
-						<img src="./img/socialMenuIcon-youtube_hover.png" class="u-hoverShow" alt="Youtube Icon">
+						<img src="./img/socialMenuIcon-youtube_hover.png" class="u-hoverShow" alt="">
 					</a>
 					<a href="http://twitter.com">
 						<img src="./img/socialMenuIcon-twitter.png" class="u-hoverHide" alt="Twitter Icon">
-						<img src="./img/socialMenuIcon-twitter_hover.png" class="u-hoverShow" alt="Twitter Icon">
+						<img src="./img/socialMenuIcon-twitter_hover.png" class="u-hoverShow" alt="">
 					</a>
 					<a href="http://linkedin.com">
 						<img src="./img/socialMenuIcon-linkdin.png" class="u-hoverHide" alt="LinkedIn Icon">
-						<img src="./img/socialMenuIcon-linkdin_hover.png" class="u-hoverShow" alt="LinkedIn Icon">
+						<img src="./img/socialMenuIcon-linkdin_hover.png" class="u-hoverShow" alt="">
 					</a>
 				</div>
 				
@@ -438,15 +451,15 @@
 				<div class="IconGroup">
 					<a href="http://youtube.com">
 						<img src="./img/socialMenuIcon-youtube.png" class="u-hoverHide" alt="Youtube Icon">
-						<img src="./img/socialMenuIcon-youtube_hover.png" class="u-hoverShow" alt="Youtube Icon">
+						<img src="./img/socialMenuIcon-youtube_hover.png" class="u-hoverShow" alt="">
 					</a>
 					<a href="http://twitter.com">
 						<img src="./img/socialMenuIcon-twitter.png" class="u-hoverHide" alt="Twitter Icon">
-						<img src="./img/socialMenuIcon-twitter_hover.png" class="u-hoverShow" alt="Twitter Icon">
+						<img src="./img/socialMenuIcon-twitter_hover.png" class="u-hoverShow" alt="">
 					</a>
 					<a href="http://linkedin.com">
 						<img src="./img/socialMenuIcon-linkdin.png" class="u-hoverHide" alt="LinkedIn Icon">
-						<img src="./img/socialMenuIcon-linkdin_hover.png" class="u-hoverShow" alt="LinkedIn Icon">
+						<img src="./img/socialMenuIcon-linkdin_hover.png" class="u-hoverShow" alt="">
 					</a>	
 				</div>
 			</div>
@@ -459,7 +472,11 @@
 					</select>
 				</div>
 			</div>
-			<small>Copyright &copy; 2012 Comverse, Inc <a href="#">Privacy Policy</a> <a href="#">Sitemap</a></small>
+			<small>
+				Copyright &copy; 2012 Comverse, Inc 
+				<a href="#">Privacy Policy</a> 
+				<a href="#">Sitemap</a>
+			</small>
 		</div>
 	</footer>
 

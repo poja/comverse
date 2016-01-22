@@ -1,0 +1,25 @@
+body {
+	color: black;
+}
+pre {
+	margin-top: 1rem;
+}
+.DarkWrapper {
+	background-color: #444444;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.u-marginTop {
+	margin-top: 6rem;
+}
+h1 {
+	font-family: 'Exo', sans-serif;
+	font-size: 40px;
+}
+h2 {
+	text-align: left;
+	text-transform: none;
+	font-weight: bold;
+	margin-top: 4rem;
+}

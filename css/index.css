@@ -1,10 +1,7 @@
 /** 
 	NEEDS FIXING:
-		ActionBox
-		IE
-		style-guide
-		Open Sans font?
 		Going over all requirements
+		Fix Under-header stuff to be with checkboxes
 **/
 /***********************************/
 /************* General  ************/
@@ -29,7 +26,7 @@
   margin-left: auto;
   margin-right: auto; }
 
-.u-clearfix::after, .ResponsiveNav ul::after, .SuccessRow::after {
+.u-clearfix::after, .ResponsiveNav ul::after, .SuccessGrid::after, .SuccessRow::after {
   content: " ";
   /* Older browser do not support empty content */
   visibility: hidden;
@@ -86,7 +83,7 @@ a.u-cleanLinks, a.ButtonLink, a.ResponsiveNav, a.CalendarColumn-topicLink, a.Blo
   flex-direction: column-reverse; }
   @media (min-width: 680px) {
     .u-mobileFlip {
-      flex-direction: column; } }
+      display: block; } }
 
 html {
   font-size: 100% !important; }
@@ -166,9 +163,10 @@ header > .Section-content {
 
 header h1 {
   width: 130px;
-  padding: .5rem 0;
+  padding: .5rem .3rem;
   margin: 0;
-  display: inline-block; }
+  display: inline-block;
+  box-sizing: border-box; }
   header h1 img {
     width: 100%; }
 
@@ -206,9 +204,8 @@ header .HeaderButton--search {
 div.u-floatUnderHeader {
   position: absolute;
   z-index: 1;
-  padding-top: 4.7rem;
+  top: 4.7rem;
   width: 100%;
-  top: 0;
   left: 0; }
   @media (min-width: 680px) {
     div.u-floatUnderHeader {
@@ -413,9 +410,13 @@ div.u-floatUnderHeader {
   display: block;
   padding: 0;
   margin: 0; }
-  .Carousel li {
-    display: block;
-    list-style: none; }
+
+.Carousel-slide, .Carousel-slide--ferriswheel {
+  display: block;
+  list-style: none;
+  transition: transform 2s ease;
+  position: relative;
+  z-index: -1; }
 
 .Carousel-slide--ferriswheel {
   padding-bottom: 2px;
@@ -459,6 +460,8 @@ div.u-floatUnderHeader {
   left: 0;
   width: 100%;
   margin-bottom: 2rem;
+  margin-left: 0;
+  margin-right: 0;
   border: 0;
   padding: 0;
   box-sizing: border-box;
@@ -468,7 +471,8 @@ div.u-floatUnderHeader {
     width: 0;
     margin: 0; }
   .CarouselNavigator .Section-content {
-    padding-left: 20px; }
+    padding-left: 20px;
+    box-sizing: border-box; }
   @media (min-width: 680px) {
     .CarouselNavigator {
       margin-left: auto; } }
@@ -590,10 +594,11 @@ i.promotion-arrow::after {
 .Section--weDo .ButtonLink {
   margin: 30px auto 20px auto; }
 
-.Section--weDo > .Section-content > .u-clearfix, .ResponsiveNav .Section--weDo > .Section-content > ul, .Section--weDo > .Section-content > .SuccessRow {
+.Section--weDo ul.u-clearfix, .Section--weDo .ResponsiveNav ul, .ResponsiveNav .Section--weDo ul, .Section--weDo ul.SuccessGrid, .Section--weDo ul.SuccessRow {
   font-size: 0;
   /* inline-block space fix */
-  padding: 0; }
+  padding: 0;
+  margin-top: 3rem; }
 
 .WeDoIcon {
   width: 33%;
@@ -602,7 +607,10 @@ i.promotion-arrow::after {
   display: inline-block;
   vertical-align: top;
   font-size: 1rem; }
-  .WeDoIcon label {
+  .WeDoIcon figure {
+    width: 100%;
+    margin: 0; }
+  .WeDoIcon figcaption {
     display: block;
     color: white;
     text-align: center; }
@@ -611,17 +619,17 @@ i.promotion-arrow::after {
       width: 16%;
       margin-top: 0; } }
 
-.WeDoIcon > img {
+.WeDoIcon img {
   width: 100%;
   margin-bottom: 1rem; }
-  .WeDoIcon > img.WeDoIcon-inside {
+  .WeDoIcon img.WeDoIcon-inside {
     display: none; }
-  .WeDoIcon > img.WeDoIcon-outside {
+  .WeDoIcon img.WeDoIcon-outside {
     display: block; }
 
-.WeDoIcon:hover > img.WeDoIcon-inside {
+.WeDoIcon:hover img.WeDoIcon-inside {
   display: block; }
-.WeDoIcon:hover > img.WeDoIcon-outside {
+.WeDoIcon:hover img.WeDoIcon-outside {
   display: none; }
 
 /***********************************/
@@ -715,6 +723,13 @@ i.promotion-arrow::after {
   .Section--success .SuccessColumn--narrow {
     width: 25%; }
 
+.SuccessGrid {
+  margin: 0 auto;
+  max-width: 450px; }
+  @media (min-width: 680px) {
+    .SuccessGrid {
+      max-width: 2040px; } }
+
 /**
  SuccessBox has two layers, one of witch rises on hover.
  Two SuccessBox types are: SuccessIcon and SuccessQuote.
@@ -733,7 +748,7 @@ i.promotion-arrow::after {
     z-index: 1;
     overflow: hidden;
     background-color: white;
-    transition: transform 2s ease-out; }
+    transition: transform 1.3s ease-out; }
   .SuccessQuote .SuccessBox-layerBottom, .SuccessIcon .SuccessBox-layerBottom {
     padding: 0.5rem;
     box-sizing: border-box;
@@ -853,14 +868,23 @@ footer {
     color: white; }
   footer small {
     display: block;
-    background-color: white; }
+    background-color: white;
+    text-align: center;
+    padding: .3rem 0rem; }
     footer small, footer small a {
-      color: #565656; }
+      color: black; }
+    footer small a {
+      border-left: 1px solid #565656;
+      padding-left: .4rem;
+      margin-left: .1rem; }
   @media (min-width: 680px) {
     footer {
       background: url("../img/iron-metal-background.png"); }
       footer small {
-        background-color: transparent; } }
+        text-align: left;
+        background-color: transparent; }
+        footer small, footer small a {
+          color: #565656; } }
 
 .Footer-links {
   position: relative;
@@ -989,6 +1013,7 @@ footer {
 .ArrowToTop {
   display: block;
   width: 20%;
+  max-width: 90px;
   height: 2.55rem;
   position: relative;
   left: 70%;
