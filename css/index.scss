@@ -309,20 +309,26 @@ header .HeaderButton--search {
 	margin-right: .5rem;
 }
 
-
-
-
 div.u-floatUnderHeader {
 	position: absolute;
 	z-index: 1;
-	top: $h-header-mobile + $p-bottom-header-mobile;
+	top: 0;
 	width: 100%;
 	left: 0;
+
+	& > div {
+		position: absolute;
+		left: 0;
+		top: $h-header-mobile + $p-bottom-header-mobile;
+		width: 100%;
+	}
 
 	@media(min-width: $w-screen-large) {
 		position: static;
 		width: auto;
 		padding: 0;
+
+		& > div { position: static; }
 	}
 }
 
@@ -342,7 +348,6 @@ div.u-floatUnderHeader {
 	}
 }
 
-
 .ResponsiveNav ul {
 	@extend .u-clearfix;
 
@@ -361,14 +366,19 @@ div.u-floatUnderHeader {
 		text-align: left;
 		font-size: 0.8rem;
 		text-transform: uppercase;
-		a { color: $c-font-gray; }
+		
+		a { 
+			display: inline-block;
+			color: $c-font-gray; 
+			width: 100%;
+		}
 
 		&:last-child {
 			a { color: red; }
 			font-weight: bold;
 			text-align: center;
 		}
-
+		
 
 		@media (min-width: $w-screen-large) and (max-width: 850px) {
 			font-size: 0.6rem;
@@ -678,7 +688,6 @@ $c-button-bright: #E5E5E5;	/* almost white */
 .CarouselNavigator {	
 	position: absolute;
 	left: 0;
-
 	width: 100%;
 	margin-bottom: 2rem;
 	margin-left: 0;
@@ -686,7 +695,6 @@ $c-button-bright: #E5E5E5;	/* almost white */
 	border: 0;
 	padding: 0;
 	box-sizing: border-box;
-
 	font-size: 0;
 
 	input[type="radio"] {
@@ -698,6 +706,10 @@ $c-button-bright: #E5E5E5;	/* almost white */
 	.Section-content {
 		padding-left: $p-section-content;
 		box-sizing: border-box;
+
+		@media(min-width: $w-content-large) {
+			padding-left: 0;
+		}
 	}
 
 	@media(min-width: $w-screen-large) {
@@ -723,13 +735,15 @@ $c-button-bright: #E5E5E5;	/* almost white */
 /* style of the boxes (labels): */
 .CarouselNavigator {
 	label {
+		@extend .u-cleanLinks;
+
 		display: inline-block;
 		height: $w-button-carousel;
 		width: $w-button-carousel;
 		border-radius: 4px;
 		border: 1px solid gray;
 		background-color: $c-button-bright;
-		color: $c-font-gray;
+		a { color: $c-font-gray; }
 		font-size: 1.5rem;
 		text-align: center;
 		line-height: $w-button-carousel;
@@ -749,7 +763,7 @@ $c-button-bright: #E5E5E5;	/* almost white */
 	input[type="radio"]:checked + label,
 	label:hover {
 		background-color: $c-bg-buttonlink-bottom;
-		color: white;
+		a { color: white; }
 	}
 }
 
@@ -873,6 +887,7 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 
 	@media(min-width: $w-screen-large) {
 		background: linear-gradient(90deg, $c-bg-wedo-side-blue,  $c-bg-wedo-middle-blue, $c-bg-wedo-side-blue);	
+		background-color: darken($c-bg-wedo-middle-blue, 40%);
 	}
 }
 
@@ -888,6 +903,8 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 }
 
 .WeDoIcon {
+	@extend .u-cleanLinks;
+
 	width: 33%;
     margin-top: .7rem;
     margin-bottom: .7rem;
@@ -963,10 +980,12 @@ $o-calendarcontent-hover: 0.7;
 .Section--calendar {
 	padding-bottom: 3.5rem;
 	background: url($u-bg-calendar-mobile);
+	background-color: black;
 	background-size: cover;	
 
 	@media(min-width: $w-screen-large) {
 		background: url($u-bg-calendar) center center fixed;
+		background-color: black;
 		background-size: cover;
 	}
 
@@ -1384,12 +1403,13 @@ footer {
 
 	@media(min-width: $w-screen-large) {
 		background: url($u-bg-footer);
+		background-color: black;
 
 		small {
 			text-align: left;
 			background-color: transparent;
 
-			&, a { color: $c-font-gray; }
+			&, a { color: lighten($c-font-gray, 20%); }
 		}
 	}
 }

@@ -51,19 +51,23 @@
 .u-graphicalLink, .HeaderButton--hamburger, .HeaderButton--search, .ArrowToTop {
   font-size: 0; }
 
-a.u-cleanLinks, a.ButtonLink, a.ResponsiveNav, a.CalendarColumn-topicLink, a.BlogPost--bright, a.Footer-links, a.BlogPost--dark,
+a.u-cleanLinks, a.ButtonLink, a.ResponsiveNav, a.WeDoIcon, a.CalendarColumn-topicLink, a.BlogPost--bright, a.Footer-links, a.BlogPost--dark,
 .u-cleanLinks a,
 .ButtonLink a,
 .ResponsiveNav a,
+.CarouselNavigator label a,
+.WeDoIcon a,
 .CalendarColumn-topicLink a,
 .BlogPost--bright a,
 .Footer-links a,
 .BlogPost--dark a {
   text-decoration: none; }
-  a.u-cleanLinks:hover, a.ButtonLink:hover, a.ResponsiveNav:hover, a.CalendarColumn-topicLink:hover, a.BlogPost--bright:hover, a.Footer-links:hover, a.BlogPost--dark:hover,
+  a.u-cleanLinks:hover, a.ButtonLink:hover, a.ResponsiveNav:hover, a.WeDoIcon:hover, a.CalendarColumn-topicLink:hover, a.BlogPost--bright:hover, a.Footer-links:hover, a.BlogPost--dark:hover,
   .u-cleanLinks a:hover,
   .ButtonLink a:hover,
   .ResponsiveNav a:hover,
+  .CarouselNavigator label a:hover,
+  .WeDoIcon a:hover,
   .CalendarColumn-topicLink a:hover,
   .BlogPost--bright a:hover,
   .Footer-links a:hover,
@@ -204,14 +208,21 @@ header .HeaderButton--search {
 div.u-floatUnderHeader {
   position: absolute;
   z-index: 1;
-  top: 4.7rem;
+  top: 0;
   width: 100%;
   left: 0; }
+  div.u-floatUnderHeader > div {
+    position: absolute;
+    left: 0;
+    top: 4.7rem;
+    width: 100%; }
   @media (min-width: 680px) {
     div.u-floatUnderHeader {
       position: static;
       width: auto;
-      padding: 0; } }
+      padding: 0; }
+      div.u-floatUnderHeader > div {
+        position: static; } }
 
 .ResponsiveNav {
   width: 100%;
@@ -239,7 +250,9 @@ div.u-floatUnderHeader {
     font-size: 0.8rem;
     text-transform: uppercase; }
     .ResponsiveNav ul li a {
-      color: #565656; }
+      display: inline-block;
+      color: #565656;
+      width: 100%; }
     .ResponsiveNav ul li:last-child {
       font-weight: bold;
       text-align: center; }
@@ -473,6 +486,9 @@ div.u-floatUnderHeader {
   .CarouselNavigator .Section-content {
     padding-left: 20px;
     box-sizing: border-box; }
+    @media (min-width: 940px) {
+      .CarouselNavigator .Section-content {
+        padding-left: 0; } }
   @media (min-width: 680px) {
     .CarouselNavigator {
       margin-left: auto; } }
@@ -498,12 +514,13 @@ div.u-floatUnderHeader {
   border-radius: 4px;
   border: 1px solid gray;
   background-color: #E5E5E5;
-  color: #565656;
   font-size: 1.5rem;
   text-align: center;
   line-height: 40px;
   cursor: pointer;
   margin-right: .5rem; }
+  .CarouselNavigator label a {
+    color: #565656; }
   @media (min-width: 680px) {
     .CarouselNavigator label {
       height: 15px;
@@ -514,8 +531,10 @@ div.u-floatUnderHeader {
       vertical-align: top; } }
 .CarouselNavigator input[type="radio"]:checked + label,
 .CarouselNavigator label:hover {
-  background-color: #1188C4;
-  color: white; }
+  background-color: #1188C4; }
+  .CarouselNavigator input[type="radio"]:checked + label a,
+  .CarouselNavigator label:hover a {
+    color: white; }
 
 .TopicRect--pink, .TopicRect--green, .TopicRect--orange {
   display: block;
@@ -589,7 +608,8 @@ i.promotion-arrow::after {
   background-size: 15px 15px; }
   @media (min-width: 680px) {
     .Section--weDo {
-      background: linear-gradient(90deg, #318bad, #56b7d6, #318bad); } }
+      background: linear-gradient(90deg, #318bad, #56b7d6, #318bad);
+      background-color: #133f4d; } }
 
 .Section--weDo .ButtonLink {
   margin: 30px auto 20px auto; }
@@ -638,10 +658,12 @@ i.promotion-arrow::after {
 .Section--calendar {
   padding-bottom: 3.5rem;
   background: url("../img/news-and-events-bg-mobile.jpg");
+  background-color: black;
   background-size: cover; }
   @media (min-width: 680px) {
     .Section--calendar {
       background: url("../img/news-and-events-bg.jpg") center center fixed;
+      background-color: black;
       background-size: cover; } }
   .Section--calendar h2 {
     margin-bottom: 0; }
@@ -879,12 +901,13 @@ footer {
       margin-left: .1rem; }
   @media (min-width: 680px) {
     footer {
-      background: url("../img/iron-metal-background.png"); }
+      background: url("../img/iron-metal-background.png");
+      background-color: black; }
       footer small {
         text-align: left;
         background-color: transparent; }
         footer small, footer small a {
-          color: #565656; } }
+          color: #898989; } }
 
 .Footer-links {
   position: relative;
