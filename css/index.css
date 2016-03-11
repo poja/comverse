@@ -89,7 +89,8 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: white; }
+  color: white;
+  background-color: white; }
 
 a {
   color: white; }
@@ -423,8 +424,7 @@ div.u-floatUnderHeader {
   display: block;
   list-style: none;
   transition: transform 2s ease;
-  position: relative;
-  z-index: -1; }
+  position: relative; }
 
 .Carousel-slide--ferriswheel {
   padding-bottom: 2px;
@@ -466,6 +466,7 @@ div.u-floatUnderHeader {
 .CarouselNavigator {
   position: absolute;
   left: 0;
+  z-index: 2;
   width: 100%;
   margin-bottom: 2rem;
   margin-left: 0;
@@ -530,6 +531,8 @@ div.u-floatUnderHeader {
   .CarouselNavigator input[type="radio"]:checked + label a,
   .CarouselNavigator label:hover a {
     color: white; }
+.CarouselNavigator a {
+  pointer-events: none; }
 
 .TopicRect--pink, .TopicRect--green, .TopicRect--orange {
   display: block;
@@ -652,7 +655,7 @@ i.promotion-arrow::after {
 /***********************************/
 .Section--calendar {
   padding-bottom: 3.5rem;
-  background: url("../img/news-and-events-bg-mobile.jpg");
+  background: url("../img/news-and-events-bg.jpg") center center;
   background-color: black;
   background-size: cover; }
   @media (min-width: 680px) {

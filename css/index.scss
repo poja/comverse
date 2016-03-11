@@ -618,7 +618,6 @@ $c-button-bright: #E5E5E5;	/* almost white */
 	list-style: none;
 	transition: transform 2s ease;
 	position: relative;
-	z-index: -1;
 }
 
 
@@ -676,6 +675,7 @@ $c-button-bright: #E5E5E5;	/* almost white */
 .CarouselNavigator {	
 	position: absolute;
 	left: 0;
+	z-index: 2;
 	width: 100%;
 	margin-bottom: 2rem;
 	margin-left: 0;
@@ -752,6 +752,10 @@ $c-button-bright: #E5E5E5;	/* almost white */
 	label:hover {
 		background-color: $c-bg-buttonlink-bottom;
 		a { color: white; }
+	}
+
+	a {
+		pointer-events: none;
 	}
 }
 
@@ -957,7 +961,7 @@ $c-bg-wedo-smallscreen-blue: #2896BF;
 
 
 $u-bg-calendar: '../img/news-and-events-bg.jpg';
-$u-bg-calendar-mobile: '../img/news-and-events-bg-mobile.jpg';
+$u-bg-calendar-mobile: '../img/news-and-events-bg.jpg';
 
 $c-date-blue: #3399CC;
 
@@ -967,7 +971,7 @@ $o-calendarcontent-hover: 0.7;
 
 .Section--calendar {
 	padding-bottom: 3.5rem;
-	background: url($u-bg-calendar-mobile);
+	background: url($u-bg-calendar-mobile) center center;
 	background-color: black;
 	background-size: cover;	
 
